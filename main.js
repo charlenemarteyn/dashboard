@@ -72,6 +72,8 @@ function getMyData(){
             let beerName = cloneBeer.querySelector(".beerName");
             beerName.textContent = beertype.name;
             beerSection.appendChild(cloneBeer);
+
+            
         }
     });
  
