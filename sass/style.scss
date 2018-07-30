@@ -1,0 +1,421 @@
+$myfont:'avenir';
+
+//COLORS USED
+$greybgcolor:#e7e7e7;
+$yellow:#f8d278;
+$salmon:#f86e57;
+$red:#e21f3f;
+$darkGreen:#537e4c;
+$lightGreen:#b5d775;
+$grey:grey;
+$greyHover:rgb(73, 62, 62);
+$whiteBackground:white;
+
+//SUB_SECTION DEFAULT STYLE
+
+
+
+body {margin:0;}
+
+* {
+    box-sizing: border-box;
+}
+
+// QUICK REVIEW DASHBOARD SECTION
+#wrapper {
+    display: grid;
+    grid-template-columns : 2fr 10fr;
+
+
+    .icon-bar {
+    height:auto;
+    background-color: $greybgcolor;
+
+        #profile {
+        height: 225px;
+        background-color:$greybgcolor;
+        margin: 20px 20px;
+        
+            p{
+            font-family: $myfont;
+            text-align: center;
+            }
+        }
+    
+       
+        .tablink {
+        background-color:$greybgcolor;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 20px 17px;
+        font-size: 17px;
+        width: 100%;
+        text-align: left;
+            &:hover{
+            background-color:$greyHover;
+            color:$greybgcolor;
+            }
+            
+            .fa-lg{
+                padding-right:12px;
+            }
+        }
+    }
+
+    #Dashboard, #Clients, #Products, #Staff{
+        background-color:$whiteBackground;
+        display:grid;
+        grid-template-rows: 10vh 27vh 48vh 48vh;
+
+        .ticketbar{
+            background-color:$whiteBackground;
+            height:9vh;
+            border-bottom: 1px solid lightgray;
+
+                .logOut{
+                    background-color:$greybgcolor;
+                    padding: 7px 14px;
+                    font-size: 15px;
+                    margin: 12px 12px;
+                    cursor: pointer;
+                    float: right;
+                    &:hover{
+                        background-color:$greyHover;
+                    }
+                }
+        }
+
+        .ticketsection{
+            padding:20px;
+
+            h1{
+                margin:0;
+                font-family: $myfont;
+                padding-bottom:5px;
+            }
+            .topBoxesWrapper{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-gap: 10px;
+                .topBoxes{
+                    height:81px;
+                    width:195px;
+                }
+
+                #inQueue{
+                    display: grid;
+                    grid-template-columns: 125px 70px;
+                    background-color:$yellow;
+                }
+
+                #served{
+                    display: grid;
+                    grid-template-columns: 125px 70px;
+                    background-color:$salmon;
+                }
+
+                #totalOrders{
+                    display: grid;
+                    grid-template-columns: 125px 70px;
+                    background-color:$red;
+                }
+                
+                #employees{
+                    display: grid;
+                    grid-template-columns: 125px 70px;
+                    background-color:$darkGreen;
+                }
+                
+                #timeleft{
+                    display: grid;
+                    grid-template-columns: 125px 70px;
+                    background-color:#b5d775;
+                }
+            }
+        }
+    }
+
+    #Clients{
+        @extend #Dashboard;
+            .ticketbar{
+                @extend .ticketbar;
+                .logOut{
+                    @extend .logOut;
+                }
+            }
+            .ticketsection{
+                @extend .ticketsection;
+                h1{
+                    @extend h1;
+                }
+                .topBoxesWrapper{
+                    @extend .topBoxesWrapper;
+                    .topBoxes{
+                        @extend .topBoxes;
+                    }
+                }
+            }
+    }
+}
+
+#toDo, #beerPop{
+    background-color: white;
+    border: 1px solid lightgrey;
+    height: 55vh;
+    width: 31.6vw;
+}
+
+.sectiontitle {
+    display: grid;
+    grid-template-columns: 20vw 11.6vw;
+    background-color: $greybgcolor;
+    height: 6vh;
+    width: 31.6vw; }
+  
+    .sectiontitle h2{
+      font-family: $myfont;
+      margin:0;
+      font-size:1.3em;
+      padding:3px;
+      margin-left: 10px;
+      font-weight: normal;
+    }
+
+    .sectiontitle .fas{
+        text-align:right;
+        padding:8px;
+    }
+
+    #stockSection, #notsure{
+        background-color: white;
+        border: 1px solid lightgray;
+        height: 55vh;
+        width: 48vw;
+    }
+
+    .secondMain{
+        width: auto;
+        height: 56vh;
+        display: grid;
+        margin-left: 20px;
+        grid-template-columns: 31.6vw 48vw;
+        grid-gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .stockTitle{
+        display: grid;
+        grid-template-columns: 30vw 18vw;
+        background-color: $greybgcolor;
+        height: 6vh;
+        width: 48vw;
+    }
+
+    .stockTitle h2{
+        font-family: $myfont;
+        margin:0;
+        font-size:1.3em;
+        padding:3px;
+        margin-left: 10px;
+        font-weight: normal;
+      }
+
+      .stockTitle .fas{
+        text-align:right;
+        padding:8px;
+    }
+
+    .right{
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .left{
+        text-align: center;
+        padding: 12px;
+    }
+
+    .left p{
+        margin: -11px;
+        font-family: $myfont;
+        color:white;
+    }
+
+    .left h2{
+        font-size: 2em;
+        margin: 0;
+        font-family: $myfont;
+        color:white;
+
+    }
+
+    #thirdMain{
+        width: auto;
+        height: 58vh;
+        display: grid;
+        margin-left: 20px;
+        grid-template-columns: 48vw 31.6vw;
+        grid-gap: 10px;
+    }
+
+    #toDoInput{
+        margin:20px;
+    }
+
+    .tabcontent {
+        display: none;
+        height: 100%;
+    }
+
+    .beerInfo{
+        height:100px; 
+        width:200px;
+        background-color: #537e4c;
+        margin:10px;
+      }
+
+    
+      .prodDescriSpot{
+        height:200px;
+        background-color: #e21f3f;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #circle{
+        width: 65%;
+        margin: 17px 76px;
+        
+    }
+ 
+    #c1{
+         fill:none;
+         stroke:#c30;
+        stroke-width: 100;
+        stroke-dasharray: 10 314;
+    }
+ 
+    #c2{
+         fill:none;
+         stroke:salmon;
+        stroke-width: 100;
+        stroke-dasharray: 50 314;
+        stroke-dashoffset: -10;
+    }
+ 
+    #c3{
+        fill:none;
+        stroke:#abc;
+        stroke-width: 100;
+        stroke-dasharray: 43 314;
+        stroke-dashoffset: -60;
+    }
+     
+     svg{
+         background-color: #f0f0f0;
+         transform: rotate(-90deg);
+         border-radius: 50%;
+     }
+
+     ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        list-style-type: none;
+        background: #eee;
+        font-size: 18px;
+        transition: 0.2s;
+        user-select: none;
+      }
+
+      ul li:nth-child(odd) {
+        background: #f9f9f9;
+      }
+
+      ul li:hover {
+        background: #ddd;
+      }
+
+      ul li.checked {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+      }
+      
+      ul li.checked::before {
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+      }
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+      }
+      
+      .close:hover {
+        background-color: #f44336;
+        color: white;
+      }
+      
+      /* Style the header */
+      .header {
+        background-color: #f44336;
+        padding: 30px 40px;
+        color: white;
+        text-align: center;
+      }
+      
+      /* Clear floats after the header */
+      .header:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Style the input */
+      input {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: 75%;
+        padding: 10px;
+        float: left;
+        font-size: 16px;
+      }
+      
+      /* Style the "Add" button */
+      .addBtn {
+        padding: 10px;
+        width: 25%;
+        background: #d9d9d9;
+        color: #555;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+      }
+      
+      .addBtn:hover {
+        background-color: #bbb;
+      }
+
+
+
+

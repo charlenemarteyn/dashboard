@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+    <div id="wrapper">
+
+        <div class="icon-bar">
+            <div id=profile><i class="fas fa-user-circle fa-10x"></i><p>Welcome back FooBar</p></div>
+            <button class="tablink" onclick="openPage('Dashboard', this, 'white')" id="defaultOpen"><i class="fas fa-chart-line fa-lg"></i> Dashboard</button>
+            <button class="tablink" onclick="openPage('Products', this, 'white')"><i class="fas fa-beer fa-lg"></i> Products</button>
+            <button class="tablink" onclick="openPage('Clients', this, 'white')"><i class="fas fa-align-left fa-lg"></i> Clients</button>
+            <button class="tablink" onclick="openPage('Staff', this, 'white')"><i class="far fa-address-book fa-lg"></i> Employees</button> 
+        </div>
+
+        <!-- DASHBOARD SECTION -->
+
+        <div id="Dashboard" class="tabcontent">
+            <div class="ticketbar">
+                <button class="logOut">Log out</button>
+            </div>
+            <div class="ticketsection">
+                <h1>Dashboard</h1>
+                <div class="topBoxesWrapper">
+                    <div class="topBoxes" id="inQueue">
+                        <div class="left">
+                            <h2 class="queue"></h2>
+                            <p>in queue</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="served"><div class="left">
+                        <h2 class="service"></h2>
+                        <p>being served</p>
+                    </div>
+                    <div class="right">
+                        <i class="fas fa-shopping-cart fa-2x"></i>
+                    </div></div>
+                    <div class="topBoxes" id="totalOrders"><div class="left">
+                        <h2 class="orders">12</h2>
+                        <p>total orders</p>
+                    </div>
+                    <div class="right">
+                        <i class="fas fa-receipt fa-2x"></i>
+                    </div></div>
+                    <div class="topBoxes" id="employees"><div class="left">
+                        <h2 class="staffNumber">12</h2>
+                        <p>employees</p>
+                    </div>
+                    <div class="right">
+                        <i class="fas fa-male fa-2x"></i>
+                    </div></div>
+                    <div class="topBoxes" id="timeleft"><div class="left">
+                        <h2 class="timeNumber">12</h2>
+                        <p>before closing</p>
+                    </div>
+                    <div class="right">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div></div>
+                </div>
+
+            </div>
+            <div class="secondMain">
+                    <div id="toDo">
+                        <div class="sectiontitle"><h2>To do</h2><i class="fas fa-times"></i></div>
+                        <input id="toDoInput" type="text"><button>Add</button>
+        
+                    </div>
+                    <div id="stockSection"><div class="stockTitle"><h2>Volume of beer</h2><i class="fas fa-times"></i></div></div>
+                </div>
+                <div id="thirdMain">
+                    <div id="notsure">
+                        <div class="stockTitle"><h2>Stock overview</h2><i class="fas fa-times"></i></div>
+                    </div>
+                    <div id="beerPop">
+                        <div class="sectiontitle"><h2>Beer popularity</h2><i class="fas fa-times"></i></div>
+                    <div id="circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle id="c1" cx="50" cy="50" r="50"/>
+                        <circle id="c2" cx="50" cy="50" r="50"/>
+                        <circle id="c3" cx="50" cy="50" r="50"/>
+                        </svg>
+                    </div></div>
+                </div>
+            
+        </div>
+
+        <!-- PRODUCT SECTION -->
+        
+        <div id="Products" class="tabcontent">
+                <div class="ticketbar">
+                    <button class="logOut">Log out</button>
+                </div>
+                <div class="ticketsection">
+                    <h1>Products</h1>
+                    <div class="topBoxesWrapper">
+                        <div class="topBoxes" id="inQueue">
+                            <div class="left">
+                                <h2 class="numprod"></h2>
+                                <p>products</p>
+                            </div>
+                            <div class="right">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="topBoxes" id="served"><div class="left">
+                            <h2>12</h2>
+                            <p>out of stock</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="totalOrders"><div class="left">
+                            <h2>12</h2>
+                            <p>keg to change</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-receipt fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="employees"><div class="left">
+                            <h2 class="imnotanumber">Row26</h2>
+                            <p>least popular</p>
+                        </div>
+                        <div class="right">
+                                <i class="far fa-thumbs-down fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="timeleft"><div class="left">
+                            <h2>Row26</h2>
+                            <p>most popular</p>
+                        </div>
+                        <div class="right">
+                                <i class="far fa-thumbs-up fa-2x"></i>
+                        </div></div>
+                    </div>
+                    </div>
+                    <div id="toputthetemplate"></div>
+                    <section class="prodDescriSpot"></section>
+            </div>
+            
+    
+        <template class="BeerTemplate">
+            <article class="beerInfo">
+                <div class="container"><img src="">
+                    <div class="middle"></div>
+                </div>
+                <h2 class="beerName"></h2>
+            </article>
+        </template>
+
+        <!-- CLIENTS SECTION -->
+
+        <div id="Clients" class="tabcontent">
+                <div class="ticketbar">
+                    <button class="logOut">Log out</button>
+                </div>
+                <div class="ticketsection">
+                    <h1>Clients</h1>
+                    <div class="topBoxesWrapper">
+                        <div class="topBoxes" id="inQueue">
+                            <div class="left">
+                                <h2>12</h2>
+                                <p>products</p>
+                            </div>
+                            <div class="right">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="topBoxes" id="served"><div class="left">
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="totalOrders"><div class="left">
+                            <h2>12</h2>
+                            <p>keg to change</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-receipt fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="employees"><div class="left">
+                            <h2 class="imnotanumber">Row26</h2>
+                            <p>least popular</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-male fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="timeleft"><div class="left">
+                            <h2>Row26</h2>
+                            <p>most popular</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-clock fa-2x"></i>
+                        </div></div>
+                    </div>
+                    </div>
+                    <div id="toputthetemplate"></div>
+            </div>
+
+
+        <!-- EMPLOYEES SECTION -->
+
+        <div id="Staff" class="tabcontent">
+                <div class="ticketbar">
+                    <button class="logOut">Log out</button>
+                </div>
+                <div class="ticketsection">
+                    <h1>Employees</h1>
+                    <div class="topBoxesWrapper">
+                        <div class="topBoxes" id="inQueue">
+                            <div class="left">
+                                <h2>12</h2>
+                                <p>employees</p>
+                            </div>
+                            <div class="right">
+                                <i class="fas fa-users fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="topBoxes" id="served"><div class="left">
+                            <h2>5</h2>
+                            <p>working</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="totalOrders"><div class="left">
+                            <h2>12</h2>
+                            <p>on day off</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-receipt fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="employees"><div class="left">
+                            <h2 class="imnotanumber">Row26</h2>
+                            <p>least popular</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-male fa-2x"></i>
+                        </div></div>
+                        <div class="topBoxes" id="timeleft"><div class="left">
+                            <h2>Row26</h2>
+                            <p>most popular</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-clock fa-2x"></i>
+                        </div></div>
+                    </div>
+                    </div>
+                    <div id="toputthetemplate"></div>
+            </div>
+
+
+
+
+
+
+    </div>
+    <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
