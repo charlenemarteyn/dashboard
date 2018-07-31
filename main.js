@@ -64,17 +64,27 @@ function getMyData(){
     numProduct.innerHTML = myJson.beertypes.length;
 
     let beerData = myJson.beertypes;
+    console.log(beerData);
     //console.log(beerData); 
     beerData.forEach(function(beertype){
         if(beerTypes.findIndex((b) => b.name == beertype.name) <= -1){
             beerTypes.push(beertype);
             let cloneBeer = productTemplate.cloneNode(true);
             let beerName = cloneBeer.querySelector(".beerName");
+            let beerAppearance = cloneBeer.querySelector(".appearText");            
             beerName.textContent = beertype.name;
+            beerAppearance.textContent = beerData.appearance;
             beerSection.appendChild(cloneBeer);
 
-            
+
+
         }
+        if(beerTypes.findIndex((b) => b.appearance == beertype.appearance) <= -1){
+            beerTypes.push(beertype);
+            let cloneBeer = productTemplate.cloneNode(true);
+            let beerAppearance = cloneBeer.querySelector(".appearText");            
+            beerAppearance.textContent = beerData.appearance;
+            beerSection.appendChild(cloneBeer);}
     });
  
 

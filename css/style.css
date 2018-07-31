@@ -176,16 +176,38 @@ body {
   height: 100%; }
 
 .beerInfo {
-  height: 100px;
-  width: 200px;
-  background-color: #537e4c;
-  margin: 10px; }
+  height: auto;
+  width: auto;
+  background-color: #e7e7e7; }
+  .beerInfo .container {
+    background: white;
+    padding-top: 10px; }
+    .beerInfo .container img {
+      width: 100%;
+      display: block; }
+  .beerInfo h2 {
+    font-family: "avenir";
+    text-align: center;
+    font-weight: lighter; }
+  .beerInfo button {
+    display: block;
+    margin: 10px auto; }
+  .beerInfo h3, .beerInfo .appearText {
+    font-family: "avenir";
+    margin: 5px 15px;
+    font-weight: normal; }
+  .beerInfo .appearText {
+    text-align: justify;
+    padding-bottom: 10px; }
 
 .prodDescriSpot {
-  height: 200px;
-  background-color: #e21f3f;
+  height: auto;
+  background-color: white;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 20px;
+  padding: 20px;
+  padding-top: 0px; }
 
 #circle {
   width: 65%;
