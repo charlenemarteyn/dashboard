@@ -192,11 +192,11 @@ body {
   .beerInfo button {
     display: block;
     margin: 10px auto; }
-  .beerInfo h3, .beerInfo .appearText {
+  .beerInfo h3, .beerInfo .appearText, .beerInfo .aromaText, .beerInfo .flavorText, .beerInfo .mouthText, .beerInfo .overallText {
     font-family: "avenir";
     margin: 5px 15px;
     font-weight: normal; }
-  .beerInfo .appearText {
+  .beerInfo .appearText, .beerInfo .aromaText, .beerInfo .flavorText, .beerInfo .mouthText, .beerInfo .overallText {
     text-align: justify;
     padding-bottom: 10px; }
 
@@ -209,9 +209,33 @@ body {
   padding: 20px;
   padding-top: 0px; }
 
+.trial {
+  height: auto;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 20px;
+  padding: 20px;
+  padding-top: 0px; }
+
+.secondtrial {
+  height: 400px;
+  background: #e7e7e7; }
+  .secondtrial img {
+    width: 40%;
+    display: block;
+    margin: 10px auto; }
+  .secondtrial h3, .secondtrial .beerInfo .appearText, .beerInfo .secondtrial .appearText, .secondtrial .beerInfo .aromaText, .beerInfo .secondtrial .aromaText, .secondtrial .beerInfo .flavorText, .beerInfo .secondtrial .flavorText, .secondtrial .beerInfo .mouthText, .beerInfo .secondtrial .mouthText, .secondtrial .beerInfo .overallText, .beerInfo .secondtrial .overallText {
+    text-align: center;
+    font-family: "avenir"; }
+
 #circle {
   width: 65%;
   margin: 17px 76px; }
+  #circle svg {
+    background-color: #f0f0f0;
+    transform: rotate(-90deg);
+    border-radius: 50%; }
 
 #c1 {
   fill: none;
@@ -232,11 +256,6 @@ body {
   stroke-width: 100;
   stroke-dasharray: 43 314;
   stroke-dashoffset: -60; }
-
-svg {
-  background-color: #f0f0f0;
-  transform: rotate(-90deg);
-  border-radius: 50%; }
 
 ul {
   margin: 0;
@@ -323,3 +342,6 @@ input {
 
 .addBtn:hover {
   background-color: #bbb; }
+
+.mouth {
+  width: 10%; }

@@ -297,14 +297,14 @@ body {margin:0;}
             margin: 5px 15px;
             font-weight: normal;
         }
-        .appearText{
+        .appearText, .aromaText, .flavorText, .mouthText, .overallText{
             @extend h3;
             text-align: justify;
             padding-bottom: 10px;
         }
       }
 
-    
+  
       .prodDescriSpot{
         height: auto;
         background-color:$whiteBackground;
@@ -315,9 +315,39 @@ body {margin:0;}
         padding-top:0px;
     }
 
+    .trial {
+            height: auto;
+            background-color:$whiteBackground;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px 20px;
+            padding: 20px;
+            padding-top:0px;
+    }
+
+    .secondtrial{
+        height:400px;
+        background:$greybgcolor;
+            img{
+                width:40%;
+                display: block;
+                margin: 10px auto;
+            }
+            h3{
+                text-align: center;
+                font-family: $myfont;
+            }
+    }
+
+
     #circle{
         width: 65%;
         margin: 17px 76px;
+        svg{
+            background-color: #f0f0f0;
+            transform: rotate(-90deg);
+            border-radius: 50%;
+        }
         
     }
  
@@ -344,11 +374,7 @@ body {margin:0;}
         stroke-dashoffset: -60;
     }
      
-     svg{
-         background-color: #f0f0f0;
-         transform: rotate(-90deg);
-         border-radius: 50%;
-     }
+
 
      ul {
         margin: 0;
@@ -448,6 +474,8 @@ body {margin:0;}
         background-color: #bbb;
       }
 
-
+.mouth{
+    width:10%;
+}
 
 
