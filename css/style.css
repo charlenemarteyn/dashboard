@@ -38,7 +38,7 @@ body {
     #wrapper #Dashboard .ticketbar, #wrapper #Clients .ticketbar, #wrapper #Products .ticketbar, #wrapper #Staff .ticketbar {
       background-color: white;
       height: 9vh;
-      border-bottom: 1px solid lightgray; }
+      border-bottom: 1px solid lightgrey; }
       #wrapper #Dashboard .ticketbar .logOut, #wrapper #Clients .ticketbar .logOut, #wrapper #Products .ticketbar .logOut, #wrapper #Staff .ticketbar .logOut {
         background-color: #e7e7e7;
         padding: 7px 14px;
@@ -178,10 +178,10 @@ body {
 .beerInfo {
   height: auto;
   width: auto;
-  background-color: #e7e7e7; }
+  background-color: #e7e7e7;
+  border: 1px solid lightgrey; }
   .beerInfo .container {
-    background: white;
-    padding-top: 10px; }
+    background: white; }
     .beerInfo .container img {
       width: 100%;
       display: block; }
@@ -220,7 +220,8 @@ body {
 
 .secondtrial {
   height: 400px;
-  background: #e7e7e7; }
+  background: #e7e7e7;
+  border: 1px solid lightgrey; }
   .secondtrial .staffName, .secondtrial .status, .secondtrial .doing {
     text-align: center;
     font-family: "avenir"; }
@@ -264,92 +265,6 @@ body {
   stroke-dasharray: 43 314;
   stroke-dashoffset: -60; }
 
-ul {
-  margin: 0;
-  padding: 0; }
-
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  list-style-type: none;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
-  user-select: none; }
-
-ul li:nth-child(odd) {
-  background: #f9f9f9; }
-
-ul li:hover {
-  background: #ddd; }
-
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through; }
-
-ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px; }
-
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px; }
-
-.close:hover {
-  background-color: #f44336;
-  color: white; }
-
-/* Style the header */
-.header {
-  background-color: #f44336;
-  padding: 30px 40px;
-  color: white;
-  text-align: center; }
-
-/* Clear floats after the header */
-.header:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-/* Style the input */
-input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px; }
-
-/* Style the "Add" button */
-.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #d9d9d9;
-  color: #555;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0; }
-
-.addBtn:hover {
-  background-color: #bbb; }
-
 .mouth {
   width: 10%; }
 
@@ -358,3 +273,11 @@ input {
   width: 98px;
   display: block;
   margin: 28px auto; }
+
+li {
+  list-style-type: none;
+  font-family: "avenir"; }
+
+#toDoInput {
+  margin-left: 40px;
+  width: 250px; }

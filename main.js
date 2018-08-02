@@ -106,6 +106,23 @@ function getMyData(){
 
 };
 
+let lst = document.querySelectorAll('li');
+let myList = document.querySelector("#toDoList");
+let btn = document.querySelector("#bouton");
+let input = document.querySelector("#toDoInput");
+let cross = document.querySelector(".theCross");
+
+btn.addEventListener("click", addItem);
+
+function addItem(){
+    let newLi = document.createElement("li");
+    newLi.innerHTML=cross + input.value;
+    //newLi.addEventListener("click", crossText);
+    myList.appendChild(newLi);
+}
+
+
+
 document.querySelector("svg").addEventListener("mouseover", animate);
     function animate(){
         document.querySelector("line").style.strokeDashoffset = 0;
@@ -116,6 +133,10 @@ document.querySelector("svg").addEventListener("mouseover", animate);
         document.querySelector("line").style.strokeDashoffset = 100;
     }
     
+
+
+
+
 /* let modal = document.querySelector('.modal');
             modal.addEventListener('click', function(){
                 modal.classList.add('hide');
