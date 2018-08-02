@@ -10,6 +10,7 @@ $lightGreen:#b5d775;
 $grey:grey;
 $greyHover:rgb(73, 62, 62);
 $whiteBackground:white;
+$topGridBoxes: 125px 70px;
 
 //SUB_SECTION DEFAULT STYLE
 
@@ -63,7 +64,7 @@ body {margin:0;}
         }
     }
 
-    #Dashboard, #Clients, #Products, #Staff{
+    #Dashboard{
         background-color:$whiteBackground;
         display:grid;
         grid-template-rows: 10vh 27vh 48vh 48vh;
@@ -105,31 +106,31 @@ body {margin:0;}
 
                 #inQueue{
                     display: grid;
-                    grid-template-columns: 125px 70px;
+                    grid-template-columns: $topGridBoxes;
                     background-color:$yellow;
                 }
 
                 #served{
                     display: grid;
-                    grid-template-columns: 125px 70px;
+                    grid-template-columns: $topGridBoxes;
                     background-color:$salmon;
                 }
 
                 #totalOrders{
                     display: grid;
-                    grid-template-columns: 125px 70px;
+                    grid-template-columns: $topGridBoxes;
                     background-color:$red;
                 }
                 
                 #employees{
                     display: grid;
-                    grid-template-columns: 125px 70px;
+                    grid-template-columns: $topGridBoxes;
                     background-color:$darkGreen;
                 }
                 
                 #timeleft{
                     display: grid;
-                    grid-template-columns: 125px 70px;
+                    grid-template-columns: $topGridBoxes;
                     background-color:#b5d775;
                 }
             }
@@ -137,6 +138,50 @@ body {margin:0;}
     }
 
     #Clients{
+        @extend #Dashboard;
+            .ticketbar{
+                @extend .ticketbar;
+                .logOut{
+                    @extend .logOut;
+                }
+            }
+            .ticketsection{
+                @extend .ticketsection;
+                h1{
+                    @extend h1;
+                }
+                .topBoxesWrapper{
+                    @extend .topBoxesWrapper;
+                    .topBoxes{
+                        @extend .topBoxes;
+                    }
+                }
+            }
+    }
+
+    #Products{
+        @extend #Dashboard;
+            .ticketbar{
+                @extend .ticketbar;
+                .logOut{
+                    @extend .logOut;
+                }
+            }
+            .ticketsection{
+                @extend .ticketsection;
+                h1{
+                    @extend h1;
+                }
+                .topBoxesWrapper{
+                    @extend .topBoxesWrapper;
+                    .topBoxes{
+                        @extend .topBoxes;
+                    }
+                }
+            }
+    }
+
+    #Staff{
         @extend #Dashboard;
             .ticketbar{
                 @extend .ticketbar;
@@ -328,15 +373,25 @@ body {margin:0;}
     .secondtrial{
         height:400px;
         background:$greybgcolor;
-            img{
-                width:40%;
-                display: block;
-                margin: 10px auto;
-            }
-            h3{
+            .staffName{
                 text-align: center;
                 font-family: $myfont;
             }
+            .status{
+                @extend .staffName;
+            }
+            .doing{
+                @extend .staffName;
+                padding:10px 30px; 
+                animation: flash linear s infinite;  
+            }
+
+            @keyframes flash {
+                0% { opacity: 1; } 
+                50% { opacity: .1; } 
+                100% { opacity: 1; }
+            }
+
     }
 
 
@@ -478,4 +533,10 @@ body {margin:0;}
     width:10%;
 }
 
+.staffIcon{
+    height: 113px;
+    width: 98px;
+    display: block;
+    margin: 28px auto;
+}
 

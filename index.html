@@ -9,7 +9,7 @@
     <div id="wrapper">
 
         <div class="icon-bar">
-            <div id=profile><i class="fas fa-user-circle fa-10x"></i><p>Welcome back FooBar</p></div>
+            <div id=profile><i class="fas fa-user-circle fa-10x"></i><p id="welcomeText"></p></div>
             <button class="tablink" onclick="openPage('Dashboard', this, 'white')" id="defaultOpen"><i class="fas fa-chart-line fa-lg"></i> Dashboard</button>
             <button class="tablink" onclick="openPage('Products', this, 'white')"><i class="fas fa-beer fa-lg"></i> Products</button>
             <button class="tablink" onclick="openPage('Clients', this, 'white')"><i class="fas fa-align-left fa-lg"></i> Clients</button>
@@ -42,14 +42,14 @@
                         <i class="fas fa-shopping-cart fa-2x"></i>
                     </div></div>
                     <div class="topBoxes" id="totalOrders"><div class="left">
-                        <h2 class="orders">12</h2>
+                        <h2 class="orders"></h2>
                         <p>total orders</p>
                     </div>
                     <div class="right">
                         <i class="fas fa-receipt fa-2x"></i>
                     </div></div>
                     <div class="topBoxes" id="employees"><div class="left">
-                        <h2 class="staffNumber">12</h2>
+                        <h2 class="staffNumber"></h2>
                         <p>employees</p>
                     </div>
                     <div class="right">
@@ -57,7 +57,7 @@
                     </div></div>
                     <div class="topBoxes" id="timeleft"><div class="left">
                         <h2 class="timeNumber">12</h2>
-                        <p>before closing</p>
+                        <p>closing time</p>
                     </div>
                     <div class="right">
                         <i class="fas fa-clock fa-2x"></i>
@@ -149,7 +149,7 @@
                     <div class="middle"></div>
                 </div>
                 <h2 class="beerName"></h2>
-                <button id="rm">Read more</button>
+                <button class="button">Read more</button>
                 <div id="expension">
                 <h3><i class="fas fa-adjust"></i> Appearance :</h3>
                 <p class="appearText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
@@ -267,30 +267,17 @@
                     </div>
                     </div>
                     <div id="toputthetemplate"></div>
-                    <section class="trial"><div class="secondtrial"><img src="images/githop.png" alt=""><h3>NAME HERE</h3>
-                    </div></section>
+                    <section class="trial"></section>
             </div>
-<template class="BeerTemplate">
-            <article class="beerInfo">
-                <div class="container"><img src="">
-                    <div class="middle"></div>
-                </div>
-                <h2 class="beerName"></h2>
-                <button id="rm">Read more</button>
-                <div id="expension">
-                <h3><i class="fas fa-adjust"></i> Appearance :</h3>
-                <p class="appearText"></p>
-                <h3><i class="fas fa-flask"></i> Aroma :</h3>
-                <p class="aromaText"></p>
-                <h3><i class="fas fa-leaf"></i> Flavor :</h3>
-                <p class="flavorText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-                <h3><svg class="mouth" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.38 17.43"><defs><style>.cls-1{fill:#fff;}.cls-1,.cls-2{stroke:#000;stroke-miterlimit:10;}</style></defs><title>mouth</title><path class="cls-1" d="M19.5,43.5" transform="translate(-29.82 -43.12)"/><path class="cls-1" d="M65.5,45.5" transform="translate(-29.82 -43.12)"/><path class="cls-2" d="M48.5,46.5a5.28,5.28,0,0,1,2.85-2.61c3.9-1.37,9.26,2.83,12.45,5.84,1.63,1.54,2.7,2.77,2.7,2.77s-19,17-36,0c0,0,1.07-1.23,2.7-2.77,3.19-3,8.55-7.21,12.45-5.84A5.28,5.28,0,0,1,48.5,46.5" transform="translate(-29.82 -43.12)"/></svg>
-                     Mouth feel :</h3>
-                <p class="mouthText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-                <h3><i class="fas fa-comment"></i> Overall impression :</h3>
-                <p class="overallText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-            </div>
-            </article>
+<template class="staffTemplate">
+                    <div class="secondtrial">
+                            <div class="staffIcon">
+                                <i class="fas fa-user fa-7x"></i>
+                            </div>
+                            <h3 class="staffName">blablz</h3>
+                            <p class="status">Status : Working</p>
+                            <h2 class="doing">serving the client number 20</h2>
+                    </div>
         </template>
 
 

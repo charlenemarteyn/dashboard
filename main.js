@@ -18,18 +18,9 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
-document.querySelector("svg").addEventListener("mouseover", animate);
-    function animate(){
-        document.querySelector("line").style.strokeDashoffset = 0;
-    }
-
-    document.querySelector("svg").addEventListener("mouseout", animateBack);
-    function animateBack(){
-        document.querySelector("line").style.strokeDashoffset = 100;
-    }
-
-
 let data;
+let welcome = document.getElementById("welcomeText");
+
 // DASHBOARD SECTION DECLARATION 
 let numInQueue = document.querySelector(".queue");
 let numBeingServed = document.querySelector(".service");
@@ -38,16 +29,18 @@ let numStaff = document.querySelector(".staffNumber");
 let timeLeft = document.querySelector(".timeNumber");
 let idsThatHaveOrdered = []
 
-
 // PRODUCT SECTION DECLARATION 
 let numProduct = document.querySelector(".numprod");
 let beerSection = document.querySelector('.prodDescriSpot');
-
 let productTemplate = document.querySelector('.BeerTemplate').content;
-
 let beerTypes = [];
 
 const showing = false;
+
+//EMPLOYEES SECTION DECLARATION
+let employeeSection = document.querySelector('.trial');
+let employeeTemplate = document.querySelector('.staffTemplate').content;
+let bartenders = [];
 
 window.addEventListener("DOMContentLoaded", getMyData)
 
@@ -57,9 +50,12 @@ function getMyData(){
     data = FooBar.getData();
     const myJson = JSON.parse(data);
     console.log(myJson);
+    welcome.innerHTML = "Welcome back " + myJson.bar.name;
     numInQueue.innerHTML = myJson.queue.length;
     numBeingServed.innerHTML = myJson.serving.length;
     numStaff.innerHTML = myJson.bartenders.length;
+
+    //timeLeft.innerHTML = myJson.bar.closingtime;
     for(const ele of myJson.serving){
         idsThatHaveOrdered[ele.id] = 1
     }
@@ -91,9 +87,63 @@ function getMyData(){
         }
     });
 
+    let staffData = myJson.bartenders;
+    staffData.forEach(function(bartender){
+        if(bartenders.findIndex((ba) => ba.name == bartender.name) <= -1){
+            bartenders.push(bartender);
+            console.log(bartenders);
+            let cloneStaff = employeeTemplate.cloneNode(true);
+            //let employeeName = cloneStaff.querySelector(".staffName");
+            //employeeName.textContent = bartenders.name;
+            /* let employeeStatus = cloneStaff.querySelector(".status");
+            employeeStatus.textContent = bartenders.status; */
+            employeeSection.appendChild(cloneStaff);
+
+        }
+    });
+
 
 
 };
-// Get Beer data
-    
 
+document.querySelector("svg").addEventListener("mouseover", animate);
+    function animate(){
+        document.querySelector("line").style.strokeDashoffset = 0;
+    }
+
+    document.querySelector("svg").addEventListener("mouseout", animateBack);
+    function animateBack(){
+        document.querySelector("line").style.strokeDashoffset = 100;
+    }
+    
+/* let modal = document.querySelector('.modal');
+            modal.addEventListener('click', function(){
+                modal.classList.add('hide');
+            });
+
+            let detailsButton = clone.querySelector('.button');
+
+            detailsButton.addEventListener('click', function(){
+                let link = product_link + product.id;
+                fetch(link).then(function(response){
+                    return response.json();
+                }).then(function(productJson){
+                    showDetails(productJson);
+                })
+            }) 
+            
+            
+            
+            
+            let beerAppear = cloneBeer.querySelector(".appearText");
+            beerAppear.textContent = beertype.description.appearance;
+            let beerAroma = cloneBeer.querySelector(".aromaText");
+            beerAroma.textContent = beertype.description.aroma;
+            let beerFlavor = cloneBeer.querySelector(".flavorText");
+            beerFlavor.textContent = beertype.description.flavor;
+            let beerMouth = cloneBeer.querySelector(".mouthText");
+            beerMouth.textContent = beertype.description.mouthfeel;
+            let beerOverall = cloneBeer.querySelector(".overallText");
+            beerOverall.textContent = beertype.description.overallImpression;
+            let beerImg = cloneBeer.querySelector("img");
+            beerImg.src="images/" + beertype.label;*/
