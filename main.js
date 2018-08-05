@@ -42,6 +42,7 @@ let employeeSection = document.querySelector('.trial');
 let employeeTemplate = document.querySelector('.staffTemplate').content;
 
 window.addEventListener("DOMContentLoaded", getMyData)
+window.addEventListener("DOMContentLoaded", addDefaultListItems)
 
 setInterval(this.getMyData.bind(this), 1 * 1000);
 
@@ -118,17 +119,30 @@ let input = document.querySelector("#toDoInput");
 
  btn.addEventListener("click", addItem);
 
+ let defaultListItems = ['Add beer prices in product section', 'Give days off to bartenders at some point'];
+ function addDefaultListItems(){
+     defaultListItems.forEach(function(defaultListItem){
+         addListItem(defaultListItem);
+     });
+ } 
+
 function addItem(){
+    addListItem(input.value);
+}
+function addListItem(textToDisplay){
     let newLi = document.createElement("li");
-    let cross = document.querySelector(".theCross").innerHTML = "&#x2715 ";
-    newLi.innerHTML = cross + input.value;
+    let cross = document.createElement("span");
+    cross.innerHTML = "&#x2715";
+    cross.classList.add('theCross');
+    newLi.innerHTML = ' ' + textToDisplay;
+    newLi.insertBefore(cross, newLi.childNodes[0]);
+    
     myList.appendChild(newLi);
-    myList.classList.add("clicker");
-} 
-
-
-
-
+    cross.onclick = function(){
+        myList.removeChild(newLi);
+    }
+    input.value = "";
+}
 
 
 document.querySelector("svg").addEventListener("mouseover", animate);
