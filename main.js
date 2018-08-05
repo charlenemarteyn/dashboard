@@ -130,6 +130,9 @@ function addItem(){
     addListItem(input.value);
 }
 function addListItem(textToDisplay){
+    if(textToDisplay == "" ){
+        return;
+    }
     let newLi = document.createElement("li");
     let cross = document.createElement("span");
     cross.innerHTML = "&#x2715";
