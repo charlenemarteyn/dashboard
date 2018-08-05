@@ -40,7 +40,6 @@ const showing = false;
 //EMPLOYEES SECTION DECLARATION
 let employeeSection = document.querySelector('.trial');
 let employeeTemplate = document.querySelector('.staffTemplate').content;
-let bartenders = [];
 
 window.addEventListener("DOMContentLoaded", getMyData)
 
@@ -54,6 +53,7 @@ function getMyData(){
     numInQueue.innerHTML = myJson.queue.length;
     numBeingServed.innerHTML = myJson.serving.length;
     numStaff.innerHTML = myJson.bartenders.length;
+
 
     //timeLeft.innerHTML = myJson.bar.closingtime;
     for(const ele of myJson.serving){
@@ -87,39 +87,47 @@ function getMyData(){
         }
     });
 
-    let staffData = myJson.bartenders;
-    staffData.forEach(function(bartender){
-        if(bartenders.findIndex((ba) => ba.name == bartender.name) <= -1){
-            bartenders.push(bartender);
-            console.log(bartenders);
-            let cloneStaff = employeeTemplate.cloneNode(true);
-            //let employeeName = cloneStaff.querySelector(".staffName");
-            //employeeName.textContent = bartenders.name;
-            /* let employeeStatus = cloneStaff.querySelector(".status");
-            employeeStatus.textContent = bartenders.status; */
-            employeeSection.appendChild(cloneStaff);
-
-        }
-    });
-
-
-
+    updateBartenderStatus(myJson.bartenders);
+    
 };
+let bartenderDynamicElements = {};
+function updateBartenderStatus(staffData){
+    staffData.forEach(function(bartender){
+        if(bartenderDynamicElements[bartender.name] == null 
+            || bartenderDynamicElements[bartender.name] == undefined){
+
+            let cloneStaff = employeeTemplate.cloneNode(true);
+            let employeeName = cloneStaff.querySelector(".staffName");
+            employeeName.textContent = bartender.name;
+            let employeeStatus = cloneStaff.querySelector(".status");
+            let dynamicDomElements = {};
+            dynamicDomElements.statusElement = employeeStatus; 
+            dynamicDomElements.employeeName = employeeName;
+            bartenderDynamicElements[bartender.name] = dynamicDomElements;
+            employeeSection.appendChild(cloneStaff);
+        }
+        bartenderDynamicElements[bartender.name].statusElement.textContent = bartender.status;
+        bartenderDynamicElements[bartender.name].employeeName.textContent = bartender.name;
+    });
+}
 
 let lst = document.querySelectorAll('li');
 let myList = document.querySelector("#toDoList");
 let btn = document.querySelector("#bouton");
-let input = document.querySelector("#toDoInput");
-let cross = document.querySelector(".theCross");
+let input = document.querySelector("#toDoInput"); 
 
-btn.addEventListener("click", addItem);
+ btn.addEventListener("click", addItem);
 
 function addItem(){
     let newLi = document.createElement("li");
-    newLi.innerHTML=cross + input.value;
-    //newLi.addEventListener("click", crossText);
+    let cross = document.querySelector(".theCross").innerHTML = "&#x2715 ";
+    newLi.innerHTML = cross + input.value;
     myList.appendChild(newLi);
-}
+    myList.classList.add("clicker");
+} 
+
+
+
 
 
 

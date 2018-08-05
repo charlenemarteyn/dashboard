@@ -456,5 +456,15 @@ li{
 #toDoInput{
     margin-left:40px;
     width:250px;
+    height:25px;
 }
 
+#bouton{
+    cursor: pointer;
+    border: $myBorder;
+    padding:3px 10px;
+}
+
+.theCross, .clicker{
+    cursor: pointer;
+}

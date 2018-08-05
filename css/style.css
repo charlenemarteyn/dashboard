@@ -280,4 +280,13 @@ li {
 
 #toDoInput {
   margin-left: 40px;
-  width: 250px; }
+  width: 250px;
+  height: 25px; }
+
+#bouton {
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  padding: 3px 10px; }
+
+.theCross, .clicker {
+  cursor: pointer; }
