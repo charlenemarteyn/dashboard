@@ -2,7 +2,8 @@ body {
   margin: 0; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "avenir"; }
 
 #wrapper {
   display: grid;
@@ -49,7 +50,7 @@ body {
         #wrapper #Dashboard .ticketbar .logOut:hover, #wrapper #Clients .ticketbar .logOut:hover, #wrapper #Products .ticketbar .logOut:hover, #wrapper #Staff .ticketbar .logOut:hover {
           background-color: #493e3e; }
     #wrapper #Dashboard .ticketsection, #wrapper #Clients .ticketsection, #wrapper #Products .ticketsection, #wrapper #Staff .ticketsection {
-      padding: 20px; }
+      padding: 23px; }
       #wrapper #Dashboard .ticketsection h1, #wrapper #Clients .ticketsection h1, #wrapper #Products .ticketsection h1, #wrapper #Staff .ticketsection h1 {
         margin: 0;
         font-family: "avenir";
@@ -82,7 +83,8 @@ body {
           grid-template-columns: 125px 70px;
           background-color: #b5d775; }
 
-#toDo, #beerPop {
+#toDo,
+#beerPop {
   background-color: white;
   border: 1px solid lightgrey;
   height: 55vh;
@@ -107,7 +109,8 @@ body {
   text-align: right;
   padding: 8px; }
 
-#stockSection, #notsure {
+#stockSection,
+#notsure {
   background-color: white;
   border: 1px solid lightgray;
   height: 55vh;
@@ -115,12 +118,10 @@ body {
 
 .secondMain {
   width: auto;
-  height: 56vh;
   display: grid;
-  margin-left: 20px;
   grid-template-columns: 31.6vw 48vw;
-  grid-gap: 10px;
-  margin-bottom: 10px; }
+  grid-gap: 16px;
+  margin: 0px 20px 20px 23px; }
 
 .stockTitle {
   display: grid;
@@ -162,11 +163,10 @@ body {
 
 #thirdMain {
   width: auto;
-  height: 58vh;
   display: grid;
-  margin-left: 20px;
   grid-template-columns: 48vw 31.6vw;
-  grid-gap: 10px; }
+  grid-gap: 16px;
+  margin: 0px 20px 20px 23px; }
 
 #toDoInput {
   margin: 20px; }
@@ -192,11 +192,19 @@ body {
   .beerInfo button {
     display: block;
     margin: 10px auto; }
-  .beerInfo h3, .beerInfo .appearText, .beerInfo .aromaText, .beerInfo .flavorText, .beerInfo .mouthText, .beerInfo .overallText {
+  .beerInfo h3, .beerInfo .appearText,
+  .beerInfo .aromaText,
+  .beerInfo .flavorText,
+  .beerInfo .mouthText,
+  .beerInfo .overallText {
     font-family: "avenir";
     margin: 5px 15px;
     font-weight: normal; }
-  .beerInfo .appearText, .beerInfo .aromaText, .beerInfo .flavorText, .beerInfo .mouthText, .beerInfo .overallText {
+  .beerInfo .appearText,
+  .beerInfo .aromaText,
+  .beerInfo .flavorText,
+  .beerInfo .mouthText,
+  .beerInfo .overallText {
     text-align: justify;
     padding-bottom: 10px; }
 
@@ -206,11 +214,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px 20px;
-  padding: 20px;
+  padding: 23px;
   padding-top: 0px; }
 
 .trial {
-  height: auto;
+  height: 100vh;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -225,6 +233,8 @@ body {
   .secondtrial .staffName, .secondtrial .status, .secondtrial .doing {
     text-align: center;
     font-family: "avenir"; }
+  .secondtrial .status {
+    color: #537e4c; }
   .secondtrial .doing {
     padding: 10px 30px;
     animation: flash linear s infinite; }
@@ -281,12 +291,49 @@ li {
 #toDoInput {
   margin-left: 40px;
   width: 250px;
-  height: 25px; }
+  height: 25px;
+  font-family: "avenir"; }
 
 #bouton {
   cursor: pointer;
   border: 1px solid lightgrey;
-  padding: 3px 10px; }
+  padding: 3px 10px;
+  font-family: "avenir"; }
 
-.theCross, .clicker {
+.theCross,
+.clicker {
   cursor: pointer; }
+
+.orderTicket {
+  height: auto;
+  width: auto;
+  background: #e7e7e7;
+  border: 1px solid lightgrey;
+  margin: 0px 24px 20px 22px; }
+  .orderTicket p {
+    font-family: "avenir"; }
+
+.sameLine {
+  display: inline-block; }
+
+.orderIdContainer {
+  margin: 5px 30px 5px 30px;
+  border-right: 1px solid black;
+  width: 170px;
+  height: 36px; }
+  .orderIdContainer h2 {
+    margin: 0;
+    font-family: "avenir"; }
+
+.orderLengthContainer {
+  margin: 12px 70px 0px 50px;
+  border-right: 1px solid black;
+  width: 170px;
+  height: 25px; }
+  .orderLengthContainer p {
+    margin: 0;
+    font-family: "avenir";
+    font-weight: normal; }
+
+.moveToRight {
+  margin-right: 25px; }

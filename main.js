@@ -1,6 +1,6 @@
 "use strict"
 
-function openPage(pageName,elmnt,color) {
+function openPage(pageName, elmnt, color) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -37,7 +37,9 @@ let beerTypes = [];
 
 const showing = false;
 
+
 //EMPLOYEES SECTION DECLARATION
+let TotalEmployees = document.querySelector('#numTotalOfEmployees');
 let employeeSection = document.querySelector('.trial');
 let employeeTemplate = document.querySelector('.staffTemplate').content;
 
@@ -46,7 +48,7 @@ window.addEventListener("DOMContentLoaded", addDefaultListItems)
 
 setInterval(this.getMyData.bind(this), 1 * 1000);
 
-function getMyData(){
+function getMyData() {
     data = FooBar.getData();
     const myJson = JSON.parse(data);
     console.log(myJson);
@@ -54,18 +56,17 @@ function getMyData(){
     numInQueue.innerHTML = myJson.queue.length;
     numBeingServed.innerHTML = myJson.serving.length;
     numStaff.innerHTML = myJson.bartenders.length;
+    TotalEmployees.innerHTML = myJson.bartenders.length;
 
-
-    //timeLeft.innerHTML = myJson.bar.closingtime;
-    for(const ele of myJson.serving){
+    for (const ele of myJson.serving) {
         idsThatHaveOrdered[ele.id] = 1
     }
     numOrders.innerHTML = idsThatHaveOrdered.length;
     numProduct.innerHTML = myJson.beertypes.length;
 
     let beerData = myJson.beertypes;
-    beerData.forEach(function(beertype){
-        if(beerTypes.findIndex((b) => b.name == beertype.name) <= -1){
+    beerData.forEach(function (beertype) {
+        if (beerTypes.findIndex((b) => b.name == beertype.name) <= -1) {
             beerTypes.push(beertype);
             let cloneBeer = productTemplate.cloneNode(true);
             let beerName = cloneBeer.querySelector(".beerName");
@@ -81,7 +82,7 @@ function getMyData(){
             let beerOverall = cloneBeer.querySelector(".overallText");
             beerOverall.textContent = beertype.description.overallImpression;
             let beerImg = cloneBeer.querySelector("img");
-            beerImg.src="images/" + beertype.label;
+            beerImg.src = "images/" + beertype.label;
             beerSection.appendChild(cloneBeer);
 
 
@@ -89,48 +90,75 @@ function getMyData(){
     });
 
     updateBartenderStatus(myJson.bartenders);
-    
+    updateClientList(myJson.serving);
+
 };
+
 let bartenderDynamicElements = {};
-function updateBartenderStatus(staffData){
-    staffData.forEach(function(bartender){
-        if(bartenderDynamicElements[bartender.name] == null 
-            || bartenderDynamicElements[bartender.name] == undefined){
+console.log(bartenderDynamicElements);
+
+function updateBartenderStatus(staffData) {
+    staffData.forEach(function (bartender) {
+        if (bartenderDynamicElements[bartender.name] == null ||
+            bartenderDynamicElements[bartender.name] == undefined) {
 
             let cloneStaff = employeeTemplate.cloneNode(true);
             let employeeName = cloneStaff.querySelector(".staffName");
             employeeName.textContent = bartender.name;
             let employeeStatus = cloneStaff.querySelector(".status");
+            let employeeDoing = cloneStaff.querySelector(".doing");
             let dynamicDomElements = {};
-            dynamicDomElements.statusElement = employeeStatus; 
-            dynamicDomElements.employeeName = employeeName;
+            dynamicDomElements.statusElement = employeeStatus;
+            dynamicDomElements.taskElement = employeeDoing;
             bartenderDynamicElements[bartender.name] = dynamicDomElements;
             employeeSection.appendChild(cloneStaff);
         }
         bartenderDynamicElements[bartender.name].statusElement.textContent = bartender.status;
-        bartenderDynamicElements[bartender.name].employeeName.textContent = bartender.name;
+        bartenderDynamicElements[bartender.name].taskElement.textContent = "serving client #" + bartender.servingCustomer;
+    });
+}
+
+// CLIENT SECTION DECLARATION
+let clientSection = document.querySelector('.myClientList');
+let clientListTemplate = document.querySelector('.myClientListTemplate').content;
+let clientListDynamicElements = {};
+let clients = [];
+
+function updateClientList(clientData) {
+    clientData.forEach(function (serving) {
+        if (clients.findIndex((c) => c.id == serving.id) <= -1) {
+            clients.push(serving);
+            let cloneClientList = clientListTemplate.cloneNode(true);
+            let orderID = cloneClientList.querySelector(".orderIdHere");
+            orderID.textContent = "Order #" + serving.id;
+            let numOfProducts = cloneClientList.querySelector(".numOfProdHere");
+            clientSection.appendChild(cloneClientList);
+
+        }
     });
 }
 
 let lst = document.querySelectorAll('li');
 let myList = document.querySelector("#toDoList");
 let btn = document.querySelector("#bouton");
-let input = document.querySelector("#toDoInput"); 
+let input = document.querySelector("#toDoInput");
 
- btn.addEventListener("click", addItem);
+btn.addEventListener("click", addItem);
 
- let defaultListItems = ['Add beer prices in product section', 'Give days off to bartenders at some point'];
- function addDefaultListItems(){
-     defaultListItems.forEach(function(defaultListItem){
-         addListItem(defaultListItem);
-     });
- } 
+let defaultListItems = ['Add beer prices in product section', 'Give days off to bartenders at some point'];
 
-function addItem(){
+function addDefaultListItems() {
+    defaultListItems.forEach(function (defaultListItem) {
+        addListItem(defaultListItem);
+    });
+}
+
+function addItem() {
     addListItem(input.value);
 }
-function addListItem(textToDisplay){
-    if(textToDisplay == "" ){
+
+function addListItem(textToDisplay) {
+    if (textToDisplay == "") {
         return;
     }
     let newLi = document.createElement("li");
@@ -139,9 +167,9 @@ function addListItem(textToDisplay){
     cross.classList.add('theCross');
     newLi.innerHTML = ' ' + textToDisplay;
     newLi.insertBefore(cross, newLi.childNodes[0]);
-    
+
     myList.appendChild(newLi);
-    cross.onclick = function(){
+    cross.onclick = function () {
         myList.removeChild(newLi);
     }
     input.value = "";
@@ -149,15 +177,17 @@ function addListItem(textToDisplay){
 
 
 document.querySelector("svg").addEventListener("mouseover", animate);
-    function animate(){
-        document.querySelector("line").style.strokeDashoffset = 0;
-    }
 
-    document.querySelector("svg").addEventListener("mouseout", animateBack);
-    function animateBack(){
-        document.querySelector("line").style.strokeDashoffset = 100;
-    }
-    
+function animate() {
+    document.querySelector("line").style.strokeDashoffset = 0;
+}
+
+document.querySelector("svg").addEventListener("mouseout", animateBack);
+
+function animateBack() {
+    document.querySelector("line").style.strokeDashoffset = 100;
+}
+
 
 
 

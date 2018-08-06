@@ -9,11 +9,18 @@
     <div id="wrapper">
 
         <div class="icon-bar">
-            <div id=profile><i class="fas fa-user-circle fa-10x"></i><p id="welcomeText"></p></div>
-            <button class="tablink" onclick="openPage('Dashboard', this, 'white')" id="defaultOpen"><i class="fas fa-chart-line fa-lg"></i> Dashboard</button>
-            <button class="tablink" onclick="openPage('Products', this, 'white')"><i class="fas fa-beer fa-lg"></i> Products</button>
-            <button class="tablink" onclick="openPage('Clients', this, 'white')"><i class="fas fa-align-left fa-lg"></i> Clients</button>
-            <button class="tablink" onclick="openPage('Staff', this, 'white')"><i class="far fa-address-book fa-lg"></i> Employees</button> 
+            <div id=profile>
+                <i class="fas fa-user-circle fa-10x"></i>
+                <p id="welcomeText"></p>
+            </div>
+            <button class="tablink" onclick="openPage('Dashboard', this, 'white')" id="defaultOpen">
+                <i class="fas fa-chart-line fa-lg"></i> Dashboard</button>
+            <button class="tablink" onclick="openPage('Products', this, 'white')">
+                <i class="fas fa-beer fa-lg"></i> Products</button>
+            <button class="tablink" onclick="openPage('Clients', this, 'white')">
+                <i class="fas fa-align-left fa-lg"></i> Clients</button>
+            <button class="tablink" onclick="openPage('Staff', this, 'white')">
+                <i class="far fa-address-book fa-lg"></i> Employees</button>
         </div>
 
         <!-- DASHBOARD SECTION -->
@@ -34,253 +41,347 @@
                             <i class="fas fa-users fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="served"><div class="left">
-                        <h2 class="service"></h2>
-                        <p>being served</p>
+                    <div class="topBoxes" id="served">
+                        <div class="left">
+                            <h2 class="service"></h2>
+                            <p>being served</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </div>
                     </div>
-                    <div class="right">
-                        <i class="fas fa-shopping-cart fa-2x"></i>
-                    </div></div>
-                    <div class="topBoxes" id="totalOrders"><div class="left">
-                        <h2 class="orders"></h2>
-                        <p>total orders</p>
+                    <div class="topBoxes" id="totalOrders">
+                        <div class="left">
+                            <h2 class="orders"></h2>
+                            <p>total orders</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-receipt fa-2x"></i>
+                        </div>
                     </div>
-                    <div class="right">
-                        <i class="fas fa-receipt fa-2x"></i>
-                    </div></div>
-                    <div class="topBoxes" id="employees"><div class="left">
-                        <h2 class="staffNumber"></h2>
-                        <p>employees</p>
+                    <div class="topBoxes" id="employees">
+                        <div class="left">
+                            <h2 class="staffNumber"></h2>
+                            <p>employees</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-user-tie fa-2x"></i>
+                        </div>
                     </div>
-                    <div class="right">
-                        <i class="fas fa-male fa-2x"></i>
-                    </div></div>
-                    <div class="topBoxes" id="timeleft"><div class="left">
-                        <h2 class="timeNumber">12</h2>
-                        <p>closing time</p>
+                    <div class="topBoxes" id="timeleft">
+                        <div class="left">
+                            <h2 class="timeNumber">22:00</h2>
+                            <p>before closing</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-clock fa-2x"></i>
+                        </div>
                     </div>
-                    <div class="right">
-                        <i class="fas fa-clock fa-2x"></i>
-                    </div></div>
                 </div>
 
             </div>
             <div class="secondMain">
-                    <div id="toDo">
-                        <div class="sectiontitle"><h2>To do</h2><i class="fas fa-times"></i></div>
-                        <input id="toDoInput" type="text" placeholder="things to do...">
-                        <span id="bouton">Add</span>
-                        <ul id="toDoList">
-                        </ul>
-        
+                <div id="toDo">
+                    <div class="sectiontitle">
+                        <h2>To do</h2>
+                        <i class="fas fa-times"></i>
                     </div>
-                    <div id="stockSection"><div class="stockTitle"><h2>Volume of beer</h2><i class="fas fa-times"></i></div></div>
+                    <input id="toDoInput" type="text" placeholder="things to do...">
+                    <span id="bouton">Add</span>
+                    <ul id="toDoList">
+                    </ul>
+
                 </div>
-                <div id="thirdMain">
-                    <div id="notsure">
-                        <div class="stockTitle"><h2>Stock overview</h2><i class="fas fa-times"></i></div>
+                <div id="stockSection">
+                    <div class="stockTitle">
+                        <h2>Volume of beer</h2>
+                        <i class="fas fa-times"></i>
                     </div>
-                    <div id="beerPop">
-                        <div class="sectiontitle"><h2>Beer popularity</h2><i class="fas fa-times"></i></div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div id="thirdMain">
+                <div id="notsure">
+                    <div class="stockTitle">
+                        <h2>Stock overview</h2>
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div id="beerPop">
+                    <div class="sectiontitle">
+                        <h2>Beer popularity</h2>
+                        <i class="fas fa-times"></i>
+                    </div>
                     <div id="circle">
                         <svg id="graph" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle id="c1" cx="50" cy="50" r="50"/>
-                        <circle id="c2" cx="50" cy="50" r="50"/>
-                        <circle id="c3" cx="50" cy="50" r="50"/>
+                            <circle id="c1" cx="50" cy="50" r="50" />
+                            <circle id="c2" cx="50" cy="50" r="50" />
+                            <circle id="c3" cx="50" cy="50" r="50" />
                         </svg>
-                    </div></div>
+                    </div>
                 </div>
-            
+            </div>
+
         </div>
 
         <!-- PRODUCT SECTION -->
-        
+
         <div id="Products" class="tabcontent">
-                <div class="ticketbar">
-                    <button class="logOut">Log out</button>
-                </div>
-                <div class="ticketsection">
-                    <h1>Products</h1>
-                    <div class="topBoxesWrapper">
-                        <div class="topBoxes" id="inQueue">
-                            <div class="left">
-                                <h2 class="numprod"></h2>
-                                <p>products</p>
-                            </div>
-                            <div class="right">
-                                <i class="fas fa-users fa-2x"></i>
-                            </div>
+            <div class="ticketbar">
+                <button class="logOut">Log out</button>
+            </div>
+            <div class="ticketsection">
+                <h1>Products</h1>
+                <div class="topBoxesWrapper">
+                    <div class="topBoxes" id="inQueue">
+                        <div class="left">
+                            <h2 class="numprod"></h2>
+                            <p>products</p>
                         </div>
-                        <div class="topBoxes" id="served"><div class="left">
+                        <div class="right">
+                            <i class="fas fa-beer fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="served">
+                        <div class="left">
                             <h2>12</h2>
                             <p>out of stock</p>
                         </div>
                         <div class="right">
-                            <i class="fas fa-shopping-cart fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="totalOrders"><div class="left">
+                            <i class="fas fa-times-circle fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="totalOrders">
+                        <div class="left">
                             <h2>12</h2>
                             <p>keg to change</p>
                         </div>
                         <div class="right">
-                            <i class="fas fa-receipt fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="employees"><div class="left">
+                            <i class="fas fa-redo fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="employees">
+                        <div class="left">
                             <h2 class="imnotanumber">Row26</h2>
                             <p>least popular</p>
                         </div>
                         <div class="right">
-                                <i class="far fa-thumbs-down fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="timeleft"><div class="left">
+                            <i class="far fa-thumbs-down fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="timeleft">
+                        <div class="left">
                             <h2>Row26</h2>
                             <p>most popular</p>
                         </div>
                         <div class="right">
-                                <i class="far fa-thumbs-up fa-2x"></i>
-                        </div></div>
+                            <i class="far fa-thumbs-up fa-2x"></i>
+                        </div>
                     </div>
-                    </div>
-                    <div id="toputthetemplate"></div>
-                    <section class="prodDescriSpot"></section>
+                </div>
             </div>
-            
-    
+            <div id="toputthetemplate"></div>
+            <section class="prodDescriSpot"></section>
+        </div>
+
+
         <template class="BeerTemplate">
             <article class="beerInfo">
-                <div class="container"><img src="images/elhefe.png">
+                <div class="container">
+                    <img src="images/elhefe.png">
                     <div class="middle"></div>
                 </div>
                 <h2 class="beerName"></h2>
                 <button class="button">Read more</button>
                 <div id="expension">
-                <h3><i class="fas fa-adjust"></i> Appearance :</h3>
-                <p class="appearText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-                <h3><i class="fas fa-flask"></i> Aroma :</h3>
-                <p class="aromaText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-                <h3><i class="fas fa-leaf"></i> Flavor :</h3>
-                <p class="flavorText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-                <h3><svg class="mouth" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.38 17.43"><defs><style>.cls-1{fill:#fff;}.cls-1,.cls-2{stroke:#000;stroke-miterlimit:10;}</style></defs><title>mouth</title><path class="cls-1" d="M19.5,43.5" transform="translate(-29.82 -43.12)"/><path class="cls-1" d="M65.5,45.5" transform="translate(-29.82 -43.12)"/><path class="cls-2" d="M48.5,46.5a5.28,5.28,0,0,1,2.85-2.61c3.9-1.37,9.26,2.83,12.45,5.84,1.63,1.54,2.7,2.77,2.7,2.77s-19,17-36,0c0,0,1.07-1.23,2.7-2.77,3.19-3,8.55-7.21,12.45-5.84A5.28,5.28,0,0,1,48.5,46.5" transform="translate(-29.82 -43.12)"/></svg>
-                     Mouth feel :</h3>
-                <p class="mouthText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-                <h3><i class="fas fa-comment"></i> Overall impression :</h3>
-                <p class="overallText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
-            </div>
+                    <h3>
+                        <i class="fas fa-adjust"></i> Appearance :</h3>
+                    <p class="appearText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <h3>
+                        <i class="fas fa-flask"></i> Aroma :</h3>
+                    <p class="aromaText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <h3>
+                        <i class="fas fa-leaf"></i> Flavor :</h3>
+                    <p class="flavorText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <h3>
+                        <svg class="mouth" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.38 17.43">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #fff;
+                                    }
+
+                                    .cls-1,
+                                    .cls-2 {
+                                        stroke: #000;
+                                        stroke-miterlimit: 10;
+                                    }
+                                </style>
+                            </defs>
+                            <title>mouth</title>
+                            <path class="cls-1" d="M19.5,43.5" transform="translate(-29.82 -43.12)" />
+                            <path class="cls-1" d="M65.5,45.5" transform="translate(-29.82 -43.12)" />
+                            <path class="cls-2" d="M48.5,46.5a5.28,5.28,0,0,1,2.85-2.61c3.9-1.37,9.26,2.83,12.45,5.84,1.63,1.54,2.7,2.77,2.7,2.77s-19,17-36,0c0,0,1.07-1.23,2.7-2.77,3.19-3,8.55-7.21,12.45-5.84A5.28,5.28,0,0,1,48.5,46.5"
+                                transform="translate(-29.82 -43.12)" />
+                        </svg>
+                        Mouth feel :</h3>
+                    <p class="mouthText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <h3>
+                        <i class="fas fa-comment"></i> Overall impression :</h3>
+                    <p class="overallText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                </div>
             </article>
         </template>
 
         <!-- CLIENTS SECTION -->
 
         <div id="Clients" class="tabcontent">
-                <div class="ticketbar">
-                    <button class="logOut">Log out</button>
-                </div>
-                <div class="ticketsection">
-                    <h1>Clients</h1>
-                    <div class="topBoxesWrapper">
-                        <div class="topBoxes" id="inQueue">
-                            <div class="left">
-                                <h2>12</h2>
-                                <p>products</p>
-                            </div>
-                            <div class="right">
-                                <i class="fas fa-users fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="topBoxes" id="served"><div class="left">
-                            <h2></h2>
-                            <p></p>
-                        </div>
-                        <div class="right">
-                            <i class="fas fa-shopping-cart fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="totalOrders"><div class="left">
-                            <h2>12</h2>
-                            <p>keg to change</p>
-                        </div>
-                        <div class="right">
-                            <i class="fas fa-receipt fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="employees"><div class="left">
-                            <h2 class="imnotanumber">Row26</h2>
-                            <p>least popular</p>
-                        </div>
-                        <div class="right">
-                            <i class="fas fa-male fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="timeleft"><div class="left">
-                            <h2>Row26</h2>
-                            <p>most popular</p>
-                        </div>
-                        <div class="right">
-                            <i class="fas fa-clock fa-2x"></i>
-                        </div></div>
-                    </div>
-                    </div>
-                    <div id="toputthetemplate"></div>
+            <div class="ticketbar">
+                <button class="logOut">Log out</button>
             </div>
+            <div class="ticketsection">
+                <h1>Clients</h1>
+                <div class="topBoxesWrapper">
+                    <div class="topBoxes" id="inQueue">
+                        <div class="left">
+                            <h2>12</h2>
+                            <p>total clients</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-user fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="served">
+                        <div class="left">
+                            <h2>10</h2>
+                            <p>total beer sold</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-beer fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="totalOrders">
+                        <div class="left">
+                            <h2>02:47</h2>
+                            <p>waiting time</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-user-clock fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="employees">
+                        <div class="left">
+                            <h2 class="imnotanumber">1</h2>
+                            <p>min. ordred</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-minus fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="timeleft">
+                        <div class="left">
+                            <h2>4</h2>
+                            <p>max. ordred</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="myClientList"></section>
+        </div>
 
+        <template class="myClientListTemplate">
+            <div class="orderTicket">
+                <div class="orderIdContainer sameLine">
+                    <h2 class="orderIdHere"></h2>
+                </div>
+                <div class="orderLengthContainer sameLine">
+                    <p class="numOfProdHere">4 products</p>
+                </div>
+                <div class="sameLine moveToRight">
+                    <p>row26</p>
+                </div>
+                <div class="sameLine moveToRight">
+                    <p>row26</p>
+                </div>
+                <div class="sameLine moveToRight">
+                    <p>row26</p>
+                </div>
+                <div class="sameLine">
+                    <p>row26</p>
+                </div>
+            </div>
+        </template>
 
         <!-- EMPLOYEES SECTION -->
 
         <div id="Staff" class="tabcontent">
-                <div class="ticketbar">
-                    <button class="logOut">Log out</button>
-                </div>
-                <div class="ticketsection">
-                    <h1>Employees</h1>
-                    <div class="topBoxesWrapper">
-                        <div class="topBoxes" id="inQueue">
-                            <div class="left">
-                                <h2>12</h2>
-                                <p>employees</p>
-                            </div>
-                            <div class="right">
-                                <i class="fas fa-users fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="topBoxes" id="served"><div class="left">
-                            <h2>5</h2>
-                            <p>working</p>
+            <div class="ticketbar">
+                <button class="logOut">Log out</button>
+            </div>
+            <div class="ticketsection">
+                <h1>Employees</h1>
+                <div class="topBoxesWrapper">
+                    <div class="topBoxes" id="inQueue">
+                        <div class="left">
+                            <h2 id="numTotalOfEmployees">12</h2>
+                            <p>employees</p>
                         </div>
                         <div class="right">
-                            <i class="fas fa-shopping-cart fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="totalOrders"><div class="left">
-                            <h2>12</h2>
+                            <i class="fas fa-user-tie fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="served">
+                        <div class="left">
+                            <h2>3</h2>
+                            <p>working today</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-user-check fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="totalOrders">
+                        <div class="left">
+                            <h2>0</h2>
                             <p>on day off</p>
                         </div>
                         <div class="right">
-                            <i class="fas fa-receipt fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="employees"><div class="left">
-                            <h2 class="imnotanumber">Row26</h2>
-                            <p>least popular</p>
+                            <i class="fas fa-user-times fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="employees">
+                        <div class="left">
+                            <h2 class="imnotanumber">Peter</h2>
+                            <p>least efficient</p>
                         </div>
                         <div class="right">
-                            <i class="fas fa-male fa-2x"></i>
-                        </div></div>
-                        <div class="topBoxes" id="timeleft"><div class="left">
-                            <h2>Row26</h2>
-                            <p>most popular</p>
+                            <i class="far fa-thumbs-down fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="topBoxes" id="timeleft">
+                        <div class="left">
+                            <h2>Jonas</h2>
+                            <p>most efficient</p>
                         </div>
                         <div class="right">
-                            <i class="fas fa-clock fa-2x"></i>
-                        </div></div>
+                            <i class="far fa-thumbs-up fa-2x"></i>
+                        </div>
                     </div>
-                    </div>
-                    <div id="toputthetemplate"></div>
-                    <section class="trial"></section>
+                </div>
             </div>
+            <section class="trial"></section>
+        </div>
         <template class="staffTemplate">
-                    <div class="secondtrial">
-                            <div class="staffIcon">
-                                <i class="fas fa-user fa-7x"></i>
-                            </div>
-                            <h3 class="staffName">blablz</h3>
-                            <p class="status">Status : Working</p>
-                            <h2 class="doing">serving the client number 20</h2>
-                    </div>
+            <div class="secondtrial">
+                <div class="staffIcon">
+                    <i class="fas fa-user-tie fa-7x"></i>
+                </div>
+                <h3 class="staffName"></h3>
+                <p class="status"></p>
+                <h2 class="doing"></h2>
+            </div>
         </template>
 
 
