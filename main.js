@@ -1,5 +1,6 @@
 "use strict"
 
+//Navigation 
 function openPage(pageName, elmnt, color) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -35,9 +36,6 @@ let beerSection = document.querySelector('.prodDescriSpot');
 let productTemplate = document.querySelector('.BeerTemplate').content;
 let beerTypes = [];
 
-const showing = false;
-
-
 //EMPLOYEES SECTION DECLARATION
 let TotalEmployees = document.querySelector('#numTotalOfEmployees');
 let employeeSection = document.querySelector('.trial');
@@ -62,9 +60,15 @@ function getMyData() {
         idsThatHaveOrdered[ele.id] = 1
     }
     numOrders.innerHTML = idsThatHaveOrdered.length;
-    numProduct.innerHTML = myJson.beertypes.length;
 
-    let beerData = myJson.beertypes;
+    showMyBeersData (myJson.beertypes);
+    updateClientList(myJson.serving);
+    updateBartenderStatus(myJson.bartenders);
+};
+
+function showMyBeersData (beerData){
+
+    numProduct.innerHTML = beerData.length;
     beerData.forEach(function (beertype) {
         if (beerTypes.findIndex((b) => b.name == beertype.name) <= -1) {
             beerTypes.push(beertype);
@@ -74,14 +78,14 @@ function getMyData() {
             
             let expend = cloneBeer.querySelector("#expension");
             let readMoreButton = cloneBeer.querySelector(".myBtn");
-
+    
             readMoreButton.addEventListener("click", displayExpension);
-
+    
             function displayExpension(){
                 expend.style.display = "block";
                 readMoreButton.display = "none";
             }
-
+    
             let beerAppear = cloneBeer.querySelector(".appearText");
             beerAppear.textContent = beertype.description.appearance;
             let beerAroma = cloneBeer.querySelector(".aromaText");
@@ -94,17 +98,23 @@ function getMyData() {
             beerOverall.textContent = beertype.description.overallImpression;
             let beerImg = cloneBeer.querySelector("img");
             beerImg.src = "images/" + beertype.label;
-
+    
             beerSection.appendChild(cloneBeer);
-
-
+    
+            beersOrdered[beertype.name] = 0;
+    
         }
     });
+}
 
-    updateBartenderStatus(myJson.bartenders);
-    updateClientList(myJson.serving);
 
-};
+
+
+
+
+
+
+
 
 let bartenderDynamicElements = {};
 console.log(bartenderDynamicElements);
@@ -126,8 +136,18 @@ function updateBartenderStatus(staffData) {
             employeeSection.appendChild(cloneStaff);
         }
         bartenderDynamicElements[bartender.name].statusElement.textContent = bartender.status;
-        bartenderDynamicElements[bartender.name].taskElement.textContent = "pouring beer for client #" + bartender.servingCustomer + " using tap " + bartender.usingTap;
-        
+        let taskString = "";
+        switch(bartender.statusDetail) {
+            case "pourBeer":
+                taskString = "Pouring beer for client #" + bartender.servingCustomer + " using tap " + bartender.usingTap;    
+            break;
+            case "receivingPayment":
+            break;
+            default:
+                taskString = "Waiting for customer";
+            break;
+        }
+        bartenderDynamicElements[bartender.name].taskElement.textContent = taskString;
     });
 }
 
@@ -137,6 +157,10 @@ let clientListTemplate = document.querySelector('.myClientListTemplate').content
 let clientListDynamicElements = {};
 let clients = [];
 let orderedDrinksTemplate = document.querySelector('.drinksOrderedTemplate').content;
+let totalBeersSold = 0;
+let totalBeerSoldElement = document.querySelector('#numTotalBeer');
+
+let beersOrdered = {};
 
 function updateClientList(clientData) {
     clientData.forEach(function (serving) {
@@ -149,14 +173,23 @@ function updateClientList(clientData) {
             let orderTicket = cloneClientList.querySelector('.orderTicket');
             let totalDrinkOrdered = cloneClientList.querySelector(".numOfProdHere");
             totalDrinkOrdered.textContent = serving.order.length + " drinks";
+            totalBeersSold += serving.order.length;
+            totalBeerSoldElement.textContent = totalBeersSold;
             serving.order.forEach(function(order){
                 let clonedOrderedDrinkTemplate = orderedDrinksTemplate.cloneNode(true);
                 let orderedDrinksContent = clonedOrderedDrinkTemplate.querySelector(".orderedDrinksHere");
                 orderedDrinksContent.textContent = order;
                 orderTicket.appendChild(clonedOrderedDrinkTemplate);
 
+                if(beersOrdered[order]==undefined){
+                    beersOrdered[order] = 0; 
+                }
+                beersOrdered[order]++;
+
             });
             clientSection.appendChild(cloneClientList);
+            console.log(beersOrdered);
+
 
         }
     });
@@ -367,34 +400,22 @@ let BeerPopularityChart = new Chart(popularityChart, {
 });
 
 
-/* let modal = document.querySelector('.modal');
-            modal.addEventListener('click', function(){
-                modal.classList.add('hide');
-            });
+let modal = document.getElementById('myModal');
 
-            let detailsButton = clone.querySelector('.button');
+// Get the button that opens the modal
+let openModal = document.getElementById("customize");
 
-            detailsButton.addEventListener('click', function(){
-                let link = product_link + product.id;
-                fetch(link).then(function(response){
-                    return response.json();
-                }).then(function(productJson){
-                    showDetails(productJson);
-                })
-            }) 
-            
-            
-            
-            
-            let beerAppear = cloneBeer.querySelector(".appearText");
-            beerAppear.textContent = beertype.description.appearance;
-            let beerAroma = cloneBeer.querySelector(".aromaText");
-            beerAroma.textContent = beertype.description.aroma;
-            let beerFlavor = cloneBeer.querySelector(".flavorText");
-            beerFlavor.textContent = beertype.description.flavor;
-            let beerMouth = cloneBeer.querySelector(".mouthText");
-            beerMouth.textContent = beertype.description.mouthfeel;
-            let beerOverall = cloneBeer.querySelector(".overallText");
-            beerOverall.textContent = beertype.description.overallImpression;
-            let beerImg = cloneBeer.querySelector("img");
-            beerImg.src="images/" + beertype.label;*/
+// Get the <span> element that closes the modal
+let closeModal = document.querySelector(".close");
+
+openModal.addEventListener("click", openTheModalForm)
+
+function openTheModalForm(){
+    modal.style.display = "block";
+}
+
+closeModal.addEventListener("click", closeTheModalForm)
+
+function closeTheModalForm(){
+    modal.style.display = "none";
+}

@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
 
 <body>
@@ -104,10 +104,10 @@
             <div id="thirdMain">
                 <div id="notsure">
                     <div class="stockTitle">
-                        <h2>Stock overview</h2>
+                        <h2>Stock overview (number of keg)</h2>
                         <i class="fas fa-times"></i>
                     </div>
-                        <canvas id="myStockChart"></canvas>
+                    <canvas id="myStockChart"></canvas>
                 </div>
                 <div id="beerPop">
                     <div class="sectiontitle">
@@ -115,7 +115,7 @@
                         <i class="fas fa-times"></i>
                     </div>
                     <div id="fixingChartSize">
-                    <canvas id="mypopuChart"></canvas>
+                        <canvas id="mypopuChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -352,6 +352,95 @@
                 </div>
             </div>
             <section class="trial"></section>
+            <div>
+                <h2 id="customize">
+                    <span>
+                        <i class="far fa-edit"></i>
+                    </span>
+                    Add more employees</h2>
+            </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>New employee form</h3>
+
+                    <div id="modalForm">
+                        <form action="/action_page.php">
+                            <label for="fname">Employee name :</label>
+                            <input type="text" id="fname" name="employeeName" placeholder="Name here..">
+                            <div class="sameLine CheckList">
+                                <p>Working days :</p>
+                                <label class="formContainer">Monday
+                                    <input type="checkbox">
+                                </label>
+                                <label class="formContainer">Tuesday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Wednesday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Thursday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Friday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Saturday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Sunday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="sameLine CheckList" id="firstCheckList">
+                                <p>Days off :</p>
+                                <label class="formContainer">Monday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Tuesday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Wednesday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Thursday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Friday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Saturday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="formContainer">Sunday
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div id="submit">Submit</div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
         <template class="staffTemplate">
             <div class="secondtrial">

@@ -28,7 +28,7 @@ body {
       width: 100%;
       text-align: left; }
       #wrapper .icon-bar .tablink:hover {
-        background-color: #493e3e;
+        background-color: grey;
         color: #e7e7e7; }
       #wrapper .icon-bar .tablink .fa-lg {
         padding-right: 12px; }
@@ -48,7 +48,7 @@ body {
         cursor: pointer;
         float: right; }
         #wrapper #Dashboard .ticketbar .logOut:hover, #wrapper #Clients .ticketbar .logOut:hover, #wrapper #Products .ticketbar .logOut:hover, #wrapper #Staff .ticketbar .logOut:hover {
-          background-color: #493e3e; }
+          background-color: grey; }
     #wrapper #Dashboard .ticketsection, #wrapper #Clients .ticketsection, #wrapper #Products .ticketsection, #wrapper #Staff .ticketsection {
       padding: 23px; }
       #wrapper #Dashboard .ticketsection h1, #wrapper #Clients .ticketsection h1, #wrapper #Products .ticketsection h1, #wrapper #Staff .ticketsection h1 {
@@ -220,7 +220,7 @@ body {
   padding-top: 0px; }
 
 .trial {
-  height: 100vh;
+  height: auto;
   background-color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -301,6 +301,8 @@ li {
   border: 1px solid lightgrey;
   padding: 3px 10px;
   font-family: "avenir"; }
+  #bouton:hover {
+    background-color: grey; }
 
 .theCross,
 .clicker {
@@ -314,6 +316,8 @@ li {
   margin: 0px 24px 20px 22px; }
   .orderTicket p {
     font-family: "avenir"; }
+  .orderTicket:hover {
+    background-color: grey; }
 
 .sameLine {
   display: inline-block; }
@@ -353,3 +357,131 @@ li {
   height: 300px;
   display: block;
   margin: 0px auto; }
+
+#customize {
+  font-weight: normal;
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom: 20px;
+  cursor: pointer; }
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; }
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer; }
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; }
+
+#submit {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center; }
+
+#submit:hover {
+  background-color: #45a049; }
+
+#modalForm {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px; }
+
+.formContainer {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px; }
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee; }
+
+/* On mouse-over, add a grey background color */
+.formcontainer:hover input ~ .checkmark {
+  background-color: #ccc; }
+
+/* When the checkbox is checked, add a blue background */
+.formcontainer input:checked ~ .checkmark {
+  background-color: #2196F3; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.formcontainer input:checked ~ .checkmark:after {
+  display: block; }
+
+.formcontainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg); }
+
+.formcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+.CheckList {
+  margin-bottom: 20px; }
