@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
 
 <body>
@@ -18,7 +19,7 @@
             <button class="tablink" onclick="openPage('Products', this, 'white')">
                 <i class="fas fa-beer fa-lg"></i> Products</button>
             <button class="tablink" onclick="openPage('Clients', this, 'white')">
-                <i class="fas fa-align-left fa-lg"></i> Clients</button>
+                <i class="fas fa-align-left fa-lg"></i> Orders</button>
             <button class="tablink" onclick="openPage('Staff', this, 'white')">
                 <i class="far fa-address-book fa-lg"></i> Employees</button>
         </div>
@@ -94,7 +95,7 @@
                 </div>
                 <div id="stockSection">
                     <div class="stockTitle">
-                        <h2>Volume of beer</h2>
+                        <h2>Volume of tap beer (in liter)</h2>
                         <i class="fas fa-times"></i>
                     </div>
                     <canvas id="myChart"></canvas>
@@ -106,18 +107,15 @@
                         <h2>Stock overview</h2>
                         <i class="fas fa-times"></i>
                     </div>
+                        <canvas id="myStockChart"></canvas>
                 </div>
                 <div id="beerPop">
                     <div class="sectiontitle">
                         <h2>Beer popularity</h2>
                         <i class="fas fa-times"></i>
                     </div>
-                    <div id="circle">
-                        <svg id="graph" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <circle id="c1" cx="50" cy="50" r="50" />
-                            <circle id="c2" cx="50" cy="50" r="50" />
-                            <circle id="c3" cx="50" cy="50" r="50" />
-                        </svg>
+                    <div id="fixingChartSize">
+                    <canvas id="mypopuChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -180,9 +178,11 @@
                     </div>
                 </div>
             </div>
-            <div id="toputthetemplate"></div>
             <section class="prodDescriSpot"></section>
         </div>
+
+
+
 
 
         <template class="BeerTemplate">
@@ -192,32 +192,19 @@
                     <div class="middle"></div>
                 </div>
                 <h2 class="beerName"></h2>
-                <button class="button">Read more</button>
+                <button class="myBtn">Read more</button>
                 <div id="expension">
                     <h3>
                         <i class="fas fa-adjust"></i> Appearance :</h3>
-                    <p class="appearText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <p class="appearText"></p>
                     <h3>
                         <i class="fas fa-flask"></i> Aroma :</h3>
-                    <p class="aromaText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <p class="aromaText"></p>
                     <h3>
                         <i class="fas fa-leaf"></i> Flavor :</h3>
-                    <p class="flavorText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <p class="flavorText"></p>
                     <h3>
                         <svg class="mouth" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.38 17.43">
-                            <defs>
-                                <style>
-                                    .cls-1 {
-                                        fill: #fff;
-                                    }
-
-                                    .cls-1,
-                                    .cls-2 {
-                                        stroke: #000;
-                                        stroke-miterlimit: 10;
-                                    }
-                                </style>
-                            </defs>
                             <title>mouth</title>
                             <path class="cls-1" d="M19.5,43.5" transform="translate(-29.82 -43.12)" />
                             <path class="cls-1" d="M65.5,45.5" transform="translate(-29.82 -43.12)" />
@@ -225,10 +212,10 @@
                                 transform="translate(-29.82 -43.12)" />
                         </svg>
                         Mouth feel :</h3>
-                    <p class="mouthText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <p class="mouthText"></p>
                     <h3>
                         <i class="fas fa-comment"></i> Overall impression :</h3>
-                    <p class="overallText">blabalbalalalalfjflsjsldlblabalbalal alalfjflsjsldl blabalbalalalalfjflsjsldl</p>
+                    <p class="overallText"></p>
                 </div>
             </article>
         </template>
@@ -240,7 +227,7 @@
                 <button class="logOut">Log out</button>
             </div>
             <div class="ticketsection">
-                <h1>Clients</h1>
+                <h1>Orders</h1>
                 <div class="topBoxesWrapper">
                     <div class="topBoxes" id="inQueue">
                         <div class="left">
@@ -253,7 +240,7 @@
                     </div>
                     <div class="topBoxes" id="served">
                         <div class="left">
-                            <h2>10</h2>
+                            <h2 id="numTotalBeer">10</h2>
                             <p>total beer sold</p>
                         </div>
                         <div class="right">
@@ -298,20 +285,13 @@
                     <h2 class="orderIdHere"></h2>
                 </div>
                 <div class="orderLengthContainer sameLine">
-                    <p class="numOfProdHere">4 products</p>
+                    <p class="numOfProdHere">4 drinks</p>
                 </div>
-                <div class="sameLine moveToRight">
-                    <p>row26</p>
-                </div>
-                <div class="sameLine moveToRight">
-                    <p>row26</p>
-                </div>
-                <div class="sameLine moveToRight">
-                    <p>row26</p>
-                </div>
-                <div class="sameLine">
-                    <p>row26</p>
-                </div>
+            </div>
+        </template>
+        <template class="drinksOrderedTemplate">
+            <div class="sameLine moveToRight">
+                <p class="orderedDrinksHere">row26</p>
             </div>
         </template>
 

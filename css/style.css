@@ -178,12 +178,13 @@ body {
 .beerInfo {
   height: auto;
   width: auto;
-  background-color: #e7e7e7;
+  background-color: white;
   border: 1px solid lightgrey; }
   .beerInfo .container {
     background: white; }
     .beerInfo .container img {
       width: 100%;
+      padding: 30px;
       display: block; }
   .beerInfo h2 {
     font-family: "avenir";
@@ -191,22 +192,23 @@ body {
     font-weight: lighter; }
   .beerInfo button {
     display: block;
-    margin: 10px auto; }
-  .beerInfo h3, .beerInfo .appearText,
-  .beerInfo .aromaText,
-  .beerInfo .flavorText,
-  .beerInfo .mouthText,
-  .beerInfo .overallText {
+    margin: 20px auto;
+    padding: 10px; }
+  .beerInfo h3 {
     font-family: "avenir";
     margin: 5px 15px;
-    font-weight: normal; }
+    font-weight: bold;
+    padding: 10px; }
   .beerInfo .appearText,
   .beerInfo .aromaText,
   .beerInfo .flavorText,
   .beerInfo .mouthText,
   .beerInfo .overallText {
     text-align: justify;
-    padding-bottom: 10px; }
+    margin: 5px 15px;
+    padding: 10px;
+    line-height: 30px;
+    font-family: "avenir"; }
 
 .prodDescriSpot {
   height: auto;
@@ -276,7 +278,7 @@ body {
   stroke-dashoffset: -60; }
 
 .mouth {
-  width: 10%; }
+  width: 5%; }
 
 .staffIcon {
   height: 113px;
@@ -317,7 +319,7 @@ li {
   display: inline-block; }
 
 .orderIdContainer {
-  margin: 5px 30px 5px 30px;
+  margin: 5px 23px 5px 15px;
   border-right: 1px solid black;
   width: 170px;
   height: 36px; }
@@ -326,9 +328,9 @@ li {
     font-family: "avenir"; }
 
 .orderLengthContainer {
-  margin: 12px 70px 0px 50px;
+  margin: 12px 60px 0px 14px;
   border-right: 1px solid black;
-  width: 170px;
+  width: 102px;
   height: 25px; }
   .orderLengthContainer p {
     margin: 0;
@@ -337,3 +339,17 @@ li {
 
 .moveToRight {
   margin-right: 25px; }
+
+.cls-1,
+.cls-2 {
+  stroke: #000;
+  stroke-miterlimit: 10; }
+
+#expension, .hide {
+  display: none; }
+
+#fixingChartSize {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0px auto; }

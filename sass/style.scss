@@ -296,13 +296,14 @@ body {
 .beerInfo {
     height: auto;
     width: auto;
-    background-color: $greybgcolor;
+    background-color: $whiteBackground;
     border: 1px solid lightgrey; //border: 2px solid $greybgcolor;
     //box-shadow: 0 0 15px #777777;
     .container {
         background: $whiteBackground;
         img {
             width: 100%;
+            padding:30px;
             display: block; //margin: 10px auto;
         }
     }
@@ -313,21 +314,25 @@ body {
     }
     button {
         display: block;
-        margin: 10px auto;
+        margin: 20px auto;
+        padding:10px;
     }
     h3 {
         font-family: $myfont;
         margin: 5px 15px;
-        font-weight: normal;
+        font-weight: bold;
+        padding:10px;
     }
     .appearText,
     .aromaText,
     .flavorText,
     .mouthText,
     .overallText {
-        @extend h3;
         text-align: justify;
-        padding-bottom: 10px;
+        margin: 5px 15px;
+        padding: 10px;
+        line-height: 30px;
+        font-family: $myfont;
     }
 }
 
@@ -415,7 +420,7 @@ body {
 }
 
 .mouth {
-    width: 10%;
+    width: 5%;
 }
 
 .staffIcon {
@@ -465,7 +470,7 @@ li {
 }
 
 .orderIdContainer {
-    margin: 5px 30px 5px 30px;
+    margin: 5px 23px 5px 15px;
     border-right: 1px solid black;
     width: 170px;
     height: 36px;
@@ -476,9 +481,9 @@ li {
 }
 
 .orderLengthContainer {
-    margin: 12px 70px 0px 50px;
+    margin: 12px 60px 0px 14px;
     border-right: 1px solid black;
-    width: 170px;
+    width: 102px;
     height: 25px;
     p {
         margin: 0;
@@ -489,4 +494,20 @@ li {
 
 .moveToRight {
     margin-right: 25px;
+}
+
+.cls-1,
+.cls-2 {
+    stroke: #000;
+    stroke-miterlimit: 10;
+}
+
+#expension, .hide{
+    display:none;
+}
+#fixingChartSize{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0px auto;
 }

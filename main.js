@@ -71,6 +71,17 @@ function getMyData() {
             let cloneBeer = productTemplate.cloneNode(true);
             let beerName = cloneBeer.querySelector(".beerName");
             beerName.textContent = beertype.name;
+            
+            let expend = cloneBeer.querySelector("#expension");
+            let readMoreButton = cloneBeer.querySelector(".myBtn");
+
+            readMoreButton.addEventListener("click", displayExpension);
+
+            function displayExpension(){
+                expend.style.display = "block";
+                readMoreButton.display = "none";
+            }
+
             let beerAppear = cloneBeer.querySelector(".appearText");
             beerAppear.textContent = beertype.description.appearance;
             let beerAroma = cloneBeer.querySelector(".aromaText");
@@ -83,6 +94,7 @@ function getMyData() {
             beerOverall.textContent = beertype.description.overallImpression;
             let beerImg = cloneBeer.querySelector("img");
             beerImg.src = "images/" + beertype.label;
+
             beerSection.appendChild(cloneBeer);
 
 
@@ -114,7 +126,8 @@ function updateBartenderStatus(staffData) {
             employeeSection.appendChild(cloneStaff);
         }
         bartenderDynamicElements[bartender.name].statusElement.textContent = bartender.status;
-        bartenderDynamicElements[bartender.name].taskElement.textContent = "serving client #" + bartender.servingCustomer;
+        bartenderDynamicElements[bartender.name].taskElement.textContent = "pouring beer for client #" + bartender.servingCustomer + " using tap " + bartender.usingTap;
+        
     });
 }
 
@@ -123,6 +136,7 @@ let clientSection = document.querySelector('.myClientList');
 let clientListTemplate = document.querySelector('.myClientListTemplate').content;
 let clientListDynamicElements = {};
 let clients = [];
+let orderedDrinksTemplate = document.querySelector('.drinksOrderedTemplate').content;
 
 function updateClientList(clientData) {
     clientData.forEach(function (serving) {
@@ -132,6 +146,16 @@ function updateClientList(clientData) {
             let orderID = cloneClientList.querySelector(".orderIdHere");
             orderID.textContent = "Order #" + serving.id;
             let numOfProducts = cloneClientList.querySelector(".numOfProdHere");
+            let orderTicket = cloneClientList.querySelector('.orderTicket');
+            let totalDrinkOrdered = cloneClientList.querySelector(".numOfProdHere");
+            totalDrinkOrdered.textContent = serving.order.length + " drinks";
+            serving.order.forEach(function(order){
+                let clonedOrderedDrinkTemplate = orderedDrinksTemplate.cloneNode(true);
+                let orderedDrinksContent = clonedOrderedDrinkTemplate.querySelector(".orderedDrinksHere");
+                orderedDrinksContent.textContent = order;
+                orderTicket.appendChild(clonedOrderedDrinkTemplate);
+
+            });
             clientSection.appendChild(cloneClientList);
 
         }
@@ -176,20 +200,171 @@ function addListItem(textToDisplay) {
 }
 
 
-document.querySelector("svg").addEventListener("mouseover", animate);
+// CHART SECTION 
 
-function animate() {
-    document.querySelector("line").style.strokeDashoffset = 0;
-}
+let myChart = document.getElementById('myChart').getContext('2d');
 
-document.querySelector("svg").addEventListener("mouseout", animateBack);
+// Global Options
+Chart.defaults.global.defaultFontFamily = 'avenir';
+Chart.defaults.global.defaultFontSize = 11;
+Chart.defaults.global.defaultFontColor = '#777';
 
-function animateBack() {
-    document.querySelector("line").style.strokeDashoffset = 100;
-}
+let massPopChart = new Chart(myChart, {
+  type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  data:{
+    labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford', 'New Bedford'],
+    datasets:[{
 
+      data:[
+        617594,
+        181045,
+        153060,
+        106519,
+        105162,
+        95072,
+        95072
+      ],
+      //backgroundColor:'green',
+      backgroundColor:[ 
+        'rgba(249,218,144, 0.6)',
+        'rgba(249,131,111, 0.6)',
+        'rgba(229,54,82, 0.6)',
+        'rgba(93,142,86, 0.6)',
+        'rgba(192,221,137, 0.6)',
+        'rgba(251,226,168, 0.6)',
+        'rgba(250,152,136, 0.6)'
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:3,
+      hoverBorderColor:'#000'
+    }]
+  },
+  options:{
+    legend:{
+      display:false,
+      position:'right',
+    },
+    layout:{
+      padding:{
+        left:10,
+        right:10,
+        bottom:0,
+        top:30
+      }
+    },
+    tooltips:{
+      enabled:true
+    }
+  }
+});
 
+let StockChart = document.getElementById('myStockChart').getContext('2d');
+let StockOverviewChart = new Chart(StockChart, {
+  type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  data:{
+    labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford', 'New Bedfopord', 'Cambrgidge', 'New Bedfvvord', 'New Bedfoord'],
+    datasets:[{
 
+      data:[
+        617594,
+        181045,
+        153060,
+        106519,
+        105162,
+        95072,
+        95072,
+        105162,
+        95072,
+        95072
+      ],
+      //backgroundColor:'green',
+      backgroundColor:[
+        'rgba(249,218,144, 0.6)',
+        'rgba(249,131,111, 0.6)',
+        'rgba(229,54,82, 0.6)',
+        'rgba(93,142,86, 0.6)',
+        'rgba(192,221,137, 0.6)',
+        'rgba(251,226,168, 0.6)',
+        'rgba(250,152,136, 0.6)',
+        'rgba(232,76,102, 0.6)',
+        'rgba(104,158,95, 0.6)',
+        'rgba(149,196,59, 0.6)'
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:3,
+      hoverBorderColor:'#000'
+    }]
+  },
+  options:{
+    legend:{
+      display:false,
+      position:'right',
+    },
+    layout:{
+      padding:{
+        left:10,
+        right:10,
+        bottom:0,
+        top:30
+      }
+    },
+    tooltips:{
+      enabled:true
+    }
+  }
+});
+
+let popularityChart = document.getElementById('mypopuChart').getContext('2d');
+let BeerPopularityChart = new Chart(popularityChart, {
+  type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  data:{
+    labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford', 'New Bedford'],
+    datasets:[{
+
+      data:[
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      //backgroundColor:'green',
+      backgroundColor:[
+        'rgba(249,218,144, 0.6)',
+        'rgba(249,131,111, 0.6)',
+        'rgba(229,54,82, 0.6)',
+        'rgba(93,142,86, 0.6)',
+        'rgba(192,221,137, 0.6)',
+        'rgba(251,226,168, 0.6)',
+        'rgba(250,152,136, 0.6)',
+      ],
+      borderWidth:1,
+      borderColor:'#777',
+      hoverBorderWidth:2,
+      hoverBorderColor:'#000'
+    }]
+  },
+  options:{
+    legend:{
+      display:false,
+    },
+    layout:{
+      padding:{
+        left:0,
+        right:0,
+        bottom:0,
+        top:10
+      }
+    },
+    tooltips:{
+      enabled:true
+    }
+  }
+});
 
 
 /* let modal = document.querySelector('.modal');
