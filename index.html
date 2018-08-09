@@ -9,11 +9,13 @@
 <body>
     <div id="wrapper">
 
+        <!-- PROFILE -->
         <div class="icon-bar">
             <div id=profile>
                 <i class="fas fa-user-circle fa-10x"></i>
                 <p id="welcomeText"></p>
             </div>
+            <!-- NAVIGATION -->
             <button class="tablink" onclick="openPage('Dashboard', this, 'white')" id="defaultOpen">
                 <i class="fas fa-chart-line fa-lg"></i> Dashboard</button>
             <button class="tablink" onclick="openPage('Products', this, 'white')">
@@ -24,16 +26,23 @@
                 <i class="far fa-address-book fa-lg"></i> Employees</button>
         </div>
 
+
         <!-- DASHBOARD SECTION -->
 
         <div id="Dashboard" class="tabcontent">
+
+            <!-- Log out button -->
             <div class="ticketbar">
                 <button class="logOut">Log out</button>
             </div>
+
             <div class="ticketsection">
+                <!-- Section's title -->
                 <h1>Dashboard</h1>
+
+                <!-- Quick overview of data (top boxes) - Customized for Dashboard section -->
                 <div class="topBoxesWrapper">
-                    <div class="topBoxes" id="inQueue">
+                    <div class="divYellow">
                         <div class="left">
                             <h2 class="queue"></h2>
                             <p>in queue</p>
@@ -42,7 +51,7 @@
                             <i class="fas fa-users fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="served">
+                    <div class="divSalmon">
                         <div class="left">
                             <h2 class="service"></h2>
                             <p>being served</p>
@@ -51,7 +60,7 @@
                             <i class="fas fa-shopping-cart fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="totalOrders">
+                    <div class="divRed">
                         <div class="left">
                             <h2 class="orders"></h2>
                             <p>total orders</p>
@@ -60,7 +69,7 @@
                             <i class="fas fa-receipt fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="employees">
+                    <div class="divDarkGreen">
                         <div class="left">
                             <h2 class="staffNumber"></h2>
                             <p>employees</p>
@@ -69,9 +78,9 @@
                             <i class="fas fa-user-tie fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="timeleft">
+                    <div class="divLightGreen">
                         <div class="left">
-                            <h2 class="timeNumber">22:00</h2>
+                            <h2 id="timeNumber">22:00</h2>
                             <p>before closing</p>
                         </div>
                         <div class="right">
@@ -79,10 +88,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
             <div class="secondMain">
-                <div id="toDo">
+
+                <!-- To do list -->
+                <div id="toDo" class="smallContainerStyle">
                     <div class="sectiontitle">
                         <h2>To do</h2>
                         <i class="fas fa-times"></i>
@@ -91,9 +102,10 @@
                     <span id="bouton">Add</span>
                     <ul id="toDoList">
                     </ul>
-
                 </div>
-                <div id="stockSection">
+
+                <!-- graph showing tap beer's volume -->
+                <div id="stockSection" class="bigContainerStyle">
                     <div class="stockTitle">
                         <h2>Volume of tap beer (in liter)</h2>
                         <i class="fas fa-times"></i>
@@ -102,14 +114,18 @@
                 </div>
             </div>
             <div id="thirdMain">
-                <div id="notsure">
+
+                <!-- graph showing beer stock -->
+                <div id="notsure" class="bigContainerStyle">
                     <div class="stockTitle">
                         <h2>Stock overview (number of keg)</h2>
                         <i class="fas fa-times"></i>
                     </div>
                     <canvas id="myStockChart"></canvas>
                 </div>
-                <div id="beerPop">
+
+                <!-- Beer popularity pie-->
+                <div id="beerPop" class="smallContainerStyle">
                     <div class="sectiontitle">
                         <h2>Beer popularity</h2>
                         <i class="fas fa-times"></i>
@@ -119,19 +135,26 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
 
         <!-- PRODUCT SECTION -->
 
         <div id="Products" class="tabcontent">
+
+            <!-- Log out button -->
             <div class="ticketbar">
                 <button class="logOut">Log out</button>
             </div>
+
             <div class="ticketsection">
+
+                <!-- Section's title -->
                 <h1>Products</h1>
+                
+                <!-- Quick overview of data (top boxes) - Customized for PRODUCT SECTION -->
                 <div class="topBoxesWrapper">
-                    <div class="topBoxes" id="inQueue">
+                    <div class="divYellow">
                         <div class="left">
                             <h2 class="numprod"></h2>
                             <p>products</p>
@@ -140,25 +163,25 @@
                             <i class="fas fa-beer fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="served">
+                    <div class="divSalmon">
                         <div class="left">
-                            <h2>12</h2>
+                            <h2>0</h2>
                             <p>out of stock</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-times-circle fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="totalOrders">
+                    <div class="divRed">
                         <div class="left">
-                            <h2>12</h2>
+                            <h2>0</h2>
                             <p>keg to change</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-redo fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="employees">
+                    <div class="divDarkGreen">
                         <div class="left">
                             <h2 class="imnotanumber">Row26</h2>
                             <p>least popular</p>
@@ -167,9 +190,9 @@
                             <i class="far fa-thumbs-down fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="timeleft">
+                    <div class="divLightGreen">
                         <div class="left">
-                            <h2>Row26</h2>
+                            <h2>Hoppily</h2>
                             <p>most popular</p>
                         </div>
                         <div class="right">
@@ -178,13 +201,66 @@
                     </div>
                 </div>
             </div>
+
+            <!-- TRIAL_____________________________________________________________ -->
+            <div class="beerInfoContainer">
+
+                
+                <div class="boxLeft"><img src="images/githop.png"></div>
+                <div class="boxRight">
+                    <h2>BEERTYPE HER</h2>
+                    <p>Keg</p>
+                    <p>Stock</p>
+                    <h4>Blabalb</h4>
+                    <p>Refreshing wheat or rye beers that can display more hop character and less yeast character than their German cousins.</p>
+                    <button>Read more</button>
+                </div>
+                <div class="expend"> 
+                        <h4>Bablalalala</h4>
+                        <p> Usually pale yellow to gold. Clarity may range from brilliant to hazy with yeast approximating the German hefeweizen style of beer. Big, long-lasting white head.</p>
+                        <h4>Balblalala</h4>
+                        <p>Low to moderate grainy wheat or rye character. Some malty sweetness is acceptable. Esters can be moderate to none, although should reflect American yeast strains. The clove and banana aromas common to German hefeweizens are inappropriate. Hop aroma may be low to moderate, and can have either a citrusy American or a spicy or floral noble hop character. Slight crisp sharpness is optional. No diacetyl.</p>
+                        <h4>blablalb</h4>
+                        <p>Light to moderately strong grainy wheat or rye flavor, which can linger into the finish. Rye versions are richer and spicier than wheat. May have a moderate malty sweetness or finish quite dry. Low to moderate hop bitterness, which sometimes lasts into the finish. Low to moderate hop flavor (citrusy American or spicy/floral noble). Esters can be moderate to none, but should not take on a German Weizen character (banana). No clove phenols, although a light spiciness from wheat or rye is acceptable. May have a slightly crisp or sharp finish. No diacetyl.</p>
+                        <h4>blfzlksdvkldvw</h4>
+                        <p>Medium-light to medium body. Medium-high to high carbonation. May have a light alcohol warmth in stronger examples.</p>
+                        <h4>Blalalfj</h4>
+                        <p>Refreshing wheat or rye beers that can display more hop character and less yeast character than their German cousins.</p>
+                    </div>
+            </div>
+
+                <div class="beerInfoContainerBis">
+                <div class="boxLeftBis"><img src="images/githop.png"></div>
+                <div class="boxRightBis">
+                    <h2>BEERTYPE HER</h2>
+                    <p>Keg</p>
+                    <p>Stock</p>
+                    <h4>Blabalb</h4>
+                    <p>Refreshing wheat or rye beers that can display more hop character and less yeast character than their German cousins.</p>
+                    <h4>Bablalalala</h4>
+                        <p> Usually pale yellow to gold. Clarity may range from brilliant to hazy with yeast approximating the German hefeweizen style of beer. Big, long-lasting white head.</p>
+                        <h4>Balblalala</h4>
+                        <p>Low to moderate grainy wheat or rye character. Some malty sweetness is acceptable. Esters can be moderate to none, although should reflect American yeast strains. The clove and banana aromas common to German hefeweizens are inappropriate. Hop aroma may be low to moderate, and can have either a citrusy American or a spicy or floral noble hop character. Slight crisp sharpness is optional. No diacetyl.</p>
+                        <h4>blablalb</h4>
+                        <p>Light to moderately strong grainy wheat or rye flavor, which can linger into the finish. Rye versions are richer and spicier than wheat. May have a moderate malty sweetness or finish quite dry. Low to moderate hop bitterness, which sometimes lasts into the finish. Low to moderate hop flavor (citrusy American or spicy/floral noble). Esters can be moderate to none, but should not take on a German Weizen character (banana). No clove phenols, although a light spiciness from wheat or rye is acceptable. May have a slightly crisp or sharp finish. No diacetyl.</p>
+                        <h4>blfzlksdvkldvw</h4>
+                        <p>Medium-light to medium body. Medium-high to high carbonation. May have a light alcohol warmth in stronger examples.</p>
+                        <h4>Blalalfj</h4>
+                        <p>Refreshing wheat or rye beers that can display more hop character and less yeast character than their German cousins.</p>
+                    <button>Read more</button>
+                </div>
+                    
+            </div>
+
+
+
+
+
+             <!-- Container for the beer info template -->
             <section class="prodDescriSpot"></section>
         </div>
 
-
-
-
-
+        <!-- Beer info template -->
         <template class="BeerTemplate">
             <article class="beerInfo">
                 <div class="container">
@@ -195,13 +271,16 @@
                 <button class="myBtn">Read more</button>
                 <div id="expension">
                     <h3>
-                        <i class="fas fa-adjust"></i> Appearance :</h3>
-                    <p class="appearText"></p>
+                        <i class="fas fa-adjust"></i> Appearance :
+                    </h3>
+                    <p class="appearText" ></p>
                     <h3>
-                        <i class="fas fa-flask"></i> Aroma :</h3>
+                        <i class="fas fa-flask"></i> Aroma :
+                    </h3>
                     <p class="aromaText"></p>
                     <h3>
-                        <i class="fas fa-leaf"></i> Flavor :</h3>
+                        <i class="fas fa-leaf"></i> Flavor :
+                    </h3>
                     <p class="flavorText"></p>
                     <h3>
                         <svg class="mouth" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.38 17.43">
@@ -211,34 +290,44 @@
                             <path class="cls-2" d="M48.5,46.5a5.28,5.28,0,0,1,2.85-2.61c3.9-1.37,9.26,2.83,12.45,5.84,1.63,1.54,2.7,2.77,2.7,2.77s-19,17-36,0c0,0,1.07-1.23,2.7-2.77,3.19-3,8.55-7.21,12.45-5.84A5.28,5.28,0,0,1,48.5,46.5"
                                 transform="translate(-29.82 -43.12)" />
                         </svg>
-                        Mouth feel :</h3>
+                        Mouth feel :
+                    </h3>
                     <p class="mouthText"></p>
                     <h3>
-                        <i class="fas fa-comment"></i> Overall impression :</h3>
+                        <i class="fas fa-comment"></i> Overall impression :
+                    </h3>
                     <p class="overallText"></p>
                 </div>
             </article>
         </template>
 
-        <!-- CLIENTS SECTION -->
+
+        <!-- ORDER SECTION -->
 
         <div id="Clients" class="tabcontent">
+
+            <!-- Log out button -->
             <div class="ticketbar">
                 <button class="logOut">Log out</button>
             </div>
+
             <div class="ticketsection">
+
+                <!-- Section's title -->
                 <h1>Orders</h1>
+                
+                <!-- Quick overview of data (top boxes) - Customized for ORDER SECTION -->
                 <div class="topBoxesWrapper">
-                    <div class="topBoxes" id="inQueue">
+                    <div class="divYellow">
                         <div class="left">
-                            <h2>12</h2>
-                            <p>total clients</p>
+                            <h2 id="totalOrderNum">12</h2>
+                            <p>total orders</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-user fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="served">
+                    <div class="divSalmon">
                         <div class="left">
                             <h2 id="numTotalBeer">10</h2>
                             <p>total beer sold</p>
@@ -247,7 +336,7 @@
                             <i class="fas fa-beer fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="totalOrders">
+                    <div class="divRed">
                         <div class="left">
                             <h2>02:47</h2>
                             <p>waiting time</p>
@@ -256,16 +345,16 @@
                             <i class="fas fa-user-clock fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="employees">
+                    <div class="divDarkGreen">
                         <div class="left">
-                            <h2 class="imnotanumber">1</h2>
+                            <h2 class="minimum">1</h2>
                             <p>min. ordred</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-minus fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="timeleft">
+                    <div class="divLightGreen">
                         <div class="left">
                             <h2>4</h2>
                             <p>max. ordred</p>
@@ -276,9 +365,12 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Container for the order template -->
             <section class="myClientList"></section>
         </div>
 
+        <!-- Order template -->
         <template class="myClientListTemplate">
             <div class="orderTicket">
                 <div class="orderIdContainer sameLine">
@@ -289,22 +381,31 @@
                 </div>
             </div>
         </template>
+
+        <!-- Detail of the order template -->
         <template class="drinksOrderedTemplate">
             <div class="sameLine moveToRight">
                 <p class="orderedDrinksHere">row26</p>
             </div>
         </template>
 
+
         <!-- EMPLOYEES SECTION -->
 
         <div id="Staff" class="tabcontent">
+
+            <!-- Log out button -->
             <div class="ticketbar">
                 <button class="logOut">Log out</button>
             </div>
+
             <div class="ticketsection">
+                <!-- Section's title -->
                 <h1>Employees</h1>
+
+                <!-- Quick overview of data (top boxes) - Customized for EMPLOYEES SECTION -->
                 <div class="topBoxesWrapper">
-                    <div class="topBoxes" id="inQueue">
+                    <div class="divYellow">
                         <div class="left">
                             <h2 id="numTotalOfEmployees">12</h2>
                             <p>employees</p>
@@ -313,7 +414,7 @@
                             <i class="fas fa-user-tie fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="served">
+                    <div class="divSalmon">
                         <div class="left">
                             <h2>3</h2>
                             <p>working today</p>
@@ -322,7 +423,7 @@
                             <i class="fas fa-user-check fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="totalOrders">
+                    <div class="divRed">
                         <div class="left">
                             <h2>0</h2>
                             <p>on day off</p>
@@ -331,16 +432,16 @@
                             <i class="fas fa-user-times fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="employees">
+                    <div class="divDarkGreen">
                         <div class="left">
-                            <h2 class="imnotanumber">Peter</h2>
+                            <h2>Peter</h2>
                             <p>least efficient</p>
                         </div>
                         <div class="right">
                             <i class="far fa-thumbs-down fa-2x"></i>
                         </div>
                     </div>
-                    <div class="topBoxes" id="timeleft">
+                    <div class="divLightGreen">
                         <div class="left">
                             <h2>Jonas</h2>
                             <p>most efficient</p>
@@ -351,7 +452,27 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Container for the staff template -->
             <section class="trial"></section>
+
+
+            <!-- Staff template -->
+            <template class="staffTemplate">
+                <div class="secondtrial">
+                    <div class="staffIcon">
+                        <i class="fas fa-user-tie fa-7x"></i>
+                    </div>
+                    <h3 class="staffName"></h3>
+                    <p class="status"></p>
+                    <div>
+                    <p class="whichOrder">Order status :</p>
+                    <p class="doing"></p>
+                </div>
+                </div>
+            </template>
+
+            <!-- Button to access form (new employees) -->
             <div>
                 <h2 id="customize">
                     <span>
@@ -368,69 +489,57 @@
                     <span class="close">&times;</span>
                     <h3>New employee form</h3>
 
+                    <!-- Form content -->
                     <div id="modalForm">
                         <form action="/action_page.php">
-                            <label for="fname">Employee name :</label>
+                            <h4>&#10095 Employee name :</h4>
                             <input type="text" id="fname" name="employeeName" placeholder="Name here..">
                             <div class="sameLine CheckList">
-                                <p>Working days :</p>
+                                <h4> &#10095 Working days :</h4>
                                 <label class="formContainer">Monday
                                     <input type="checkbox">
                                 </label>
                                 <label class="formContainer">Tuesday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Wednesday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Thursday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Friday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Saturday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Sunday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="sameLine CheckList" id="firstCheckList">
-                                <p>Days off :</p>
+                            <div class="sameLine CheckList">
+                                <h4>&#10095 Days off :</h4>
                                 <label class="formContainer">Monday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Tuesday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Wednesday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Thursday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Friday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Saturday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                                 <label class="formContainer">Sunday
                                     <input type="checkbox">
-                                    <span class="checkmark"></span>
                                 </label>
                             </div>
 
@@ -438,26 +547,12 @@
                         </form>
                     </div>
                 </div>
-
             </div>
-
         </div>
-        <template class="staffTemplate">
-            <div class="secondtrial">
-                <div class="staffIcon">
-                    <i class="fas fa-user-tie fa-7x"></i>
-                </div>
-                <h3 class="staffName"></h3>
-                <p class="status"></p>
-                <h2 class="doing"></h2>
-            </div>
-        </template>
-
-
-
-
-
     </div>
+
+
+
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
     <script src="main.js"></script>
 </body>

@@ -1,17 +1,44 @@
-$myfont:'avenir';
 //COLORS USED
 $greybgcolor:#e7e7e7;
 $yellow:#f8d278;
 $salmon:#f86e57;
 $red:#e21f3f;
 $darkGreen:#537e4c;
+$greenSubmitBtn :#5d8e56;
 $lightGreen:#b5d775;
 $grey:grey;
 $whiteBackground:white;
+
 //OTHERS 
 $myBorder: 1px solid lightgrey;
 $topGridBoxes: 125px 70px;
-//SUB_SECTION DEFAULT STYLE
+$myfont:'avenir';
+
+// SHARED STYLES 
+%topBoxesStyle-shared{
+    display: grid;
+    grid-template-columns: $topGridBoxes;
+    height: 81px;
+    width: 195px; 
+}
+
+%dashboardContainerh2Style-shared{
+margin: 0;
+font-size: 1.3em;
+padding: 3px;
+margin-left: 10px;
+font-weight: normal;
+}
+
+%beerInfoTextStyle-shared{
+    text-align: justify;
+        margin: 5px 15px;
+        padding: 10px;
+        line-height: 30px;
+}
+
+// ------------------------------------------------------------------------------------- //
+
 
 body {
     margin: 0;
@@ -22,207 +49,138 @@ body {
     font-family: $myfont;
 }
 
-// QUICK REVIEW DASHBOARD SECTION
-#wrapper {
+
+// MAIN CONTAINER
+#wrapper{ //Main container
     display: grid;
     grid-template-columns: 2fr 10fr;
-    .icon-bar {
-        height: auto;
-        background-color: $greybgcolor;
-        #profile {
+}
+
+// LEFT SIDE SECTION + NAVIGATION 
+.icon-bar { //container on the left side
+    height: auto;
+    background-color: $greybgcolor;
+        #profile { // Profile of the person who logged in
             height: 225px;
             background-color: $greybgcolor;
             margin: 20px 20px;
-            p {
-                font-family: $myfont;
-                text-align: center;
-            }
+                p { // Welcome text
+                    text-align: center;
+                }
         }
-        .tablink {
-            background-color: $greybgcolor;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 20px 17px;
-            font-size: 17px;
-            width: 100%;
-            text-align: left;
-            &:hover {
+    .tablink { // Navigation
+        background-color: $greybgcolor;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 20px 17px;
+        font-size: 17px;
+        width: 100%;
+        text-align: left;
+            &:hover { // When hovering navigation 
                 background-color: $grey;
                 color: $greybgcolor;
             }
-            .fa-lg {
+            .fa-lg { // Icons of the navigation
                 padding-right: 12px;
             }
-        }
     }
-    #Dashboard {
-        background-color: $whiteBackground;
+}
+
+.tabcontent { //Used for navigation
+    display: none;
+    height: 100%;
+}
+
+// LOG OUT SECTION 
+.ticketbar { // Container of the log out button
+    background-color: $whiteBackground;
+    height: 9vh;
+    border-bottom: $myBorder;
+    .logOut { // log out button
+        background-color: $greybgcolor;
+        padding: 7px 14px;
+        font-size: 15px;
+        margin: 12px 12px;
+        cursor: pointer;
+        float: right;
+            &:hover { // when log out button is hovered
+                background-color: $grey;
+            }
+    }
+}
+
+// TITLE PAGE SECTION
+.ticketsection { //Container for the title
+    padding: 23px;
+        h1 { // title's section 
+            margin:0;
+            padding-bottom: 5px;
+        }
+}
+
+// 5 SMALL COLORFUL BOXES SECTION 
+.topBoxesWrapper { // container for the 5 boxes
         display: grid;
-        grid-template-rows: 10vh 27vh 48vh 48vh;
-        .ticketbar {
-            background-color: $whiteBackground;
-            height: 9vh;
-            border-bottom: $myBorder;
-            .logOut {
-                background-color: $greybgcolor;
-                padding: 7px 14px;
-                font-size: 15px;
-                margin: 12px 12px;
-                cursor: pointer;
-                float: right;
-                &:hover {
-                    background-color: $grey;
-                }
-            }
+        grid-template-columns: repeat(5, 1fr);;
+        grid-gap: 10px;
+        .divYellow { // Yellow box
+            @extend %topBoxesStyle-shared;
+            background-color: $yellow;
         }
-        .ticketsection {
-            padding: 23px;
-            h1 {
-                margin: 0;
-                font-family: $myfont;
-                padding-bottom: 5px;
-            }
-            .topBoxesWrapper {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-gap: 10px;
-                .topBoxes {
-                    height: 81px;
-                    width: 195px;
-                }
-                #inQueue {
-                    display: grid;
-                    grid-template-columns: $topGridBoxes;
-                    background-color: $yellow;
-                }
-                #served {
-                    display: grid;
-                    grid-template-columns: $topGridBoxes;
-                    background-color: $salmon;
-                }
-                #totalOrders {
-                    display: grid;
-                    grid-template-columns: $topGridBoxes;
-                    background-color: $red;
-                }
-                #employees {
-                    display: grid;
-                    grid-template-columns: $topGridBoxes;
-                    background-color: $darkGreen;
-                }
-                #timeleft {
-                    display: grid;
-                    grid-template-columns: $topGridBoxes;
-                    background-color: $lightGreen;
-                }
-            }
+        .divSalmon { // orange box
+            @extend %topBoxesStyle-shared;
+            background-color: $salmon;
         }
-    }
-    #Clients {
-        @extend #Dashboard;
-        .ticketbar {
-            @extend .ticketbar;
-            .logOut {
-                @extend .logOut;
-            }
+        .divRed { // Red box
+            @extend %topBoxesStyle-shared;
+            background-color: $red;
         }
-        .ticketsection {
-            @extend .ticketsection;
-            h1 {
-                @extend h1;
-            }
-            .topBoxesWrapper {
-                @extend .topBoxesWrapper;
-                .topBoxes {
-                    @extend .topBoxes;
-                }
-            }
+        .divDarkGreen { // Dark green box
+            @extend %topBoxesStyle-shared;
+            background-color: $darkGreen;
         }
-    }
-    #Products {
-        @extend #Dashboard;
-        .ticketbar {
-            @extend .ticketbar;
-            .logOut {
-                @extend .logOut;
-            }
+        .divLightGreen { // Light green box
+            @extend %topBoxesStyle-shared;
+            background-color: $lightGreen;
         }
-        .ticketsection {
-            @extend .ticketsection;
-            h1 {
-                @extend h1;
-            }
-            .topBoxesWrapper {
-                @extend .topBoxesWrapper;
-                .topBoxes {
-                    @extend .topBoxes;
-                }
-            }
-        }
-    }
-    #Staff {
-        @extend #Dashboard;
-        .ticketbar {
-            @extend .ticketbar;
-            .logOut {
-                @extend .logOut;
-            }
-        }
-        .ticketsection {
-            @extend .ticketsection;
-            h1 {
-                @extend h1;
-            }
-            .topBoxesWrapper {
-                @extend .topBoxesWrapper;
-                .topBoxes {
-                    @extend .topBoxes;
-                }
-            }
-        }
-    }
-}
 
-#toDo,
-#beerPop {
-    background-color: white;
-    border: 1px solid lightgrey;
-    height: 55vh;
-    width: 31.6vw;
-}
+    }
 
-.sectiontitle {
+.right { // Container for the box's icon
+        text-align: center;
+        margin-top: 30px;
+}
+    
+.left { // Container for the data of the box
+    text-align: center;
+    padding: 12px;
+        p { // legend of the data 
+            margin: -11px;
+            color: $whiteBackground;
+        }
+        h2 { // data fetched inside of the boxes
+            font-size: 2em;
+            margin: 0;
+            color:$whiteBackground;
+        }
+    }
+
+// USED IN ORDERS SECTION AND EMPLOYEE SECTION (order list + form in the modal)
+.sameLine { // Keep div on the same line
+    display: inline-block;
+}
+    
+
+// STYLE OF DASHBOARD SECTION 
+
+#Dashboard { // Main structure of the dashboard section
+    background-color: $whiteBackground;
     display: grid;
-    grid-template-columns: 20vw 11.6vw;
-    background-color: $greybgcolor;
-    height: 6vh;
-    width: 31.6vw;
+    grid-template-rows: 10vh 27vh 48vh 48vh;
 }
 
-.sectiontitle h2 {
-    font-family: $myfont;
-    margin: 0;
-    font-size: 1.3em;
-    padding: 3px;
-    margin-left: 10px;
-    font-weight: normal;
-}
-
-.sectiontitle .fas {
-    text-align: right;
-    padding: 8px;
-}
-
-#stockSection,
-#notsure {
-    background-color: white;
-    border: 1px solid lightgray;
-    height: 55vh;
-    width: 48vw;
-}
-
-.secondMain {
+.secondMain { // Container for the to do list + volume of tap beer graph
     width: auto;
     display: grid;
     grid-template-columns: 31.6vw 48vw;
@@ -230,52 +188,72 @@ body {
     margin: 0px 20px 20px 23px;
 }
 
-.stockTitle {
-    display: grid;
-    grid-template-columns: 30vw 18vw;
-    background-color: $greybgcolor;
-    height: 6vh;
-    width: 48vw;
+.smallContainerStyle{ // Styling of the small containers 
+    background-color: white;
+    border: 1px solid lightgrey;
+    height: 55vh;
+    width: 31.6vw;
+        .sectiontitle { // container for the title
+            display: grid;
+            grid-template-columns: 20vw 11.6vw;
+            background-color: $greybgcolor;
+            height: 6vh;
+            width: 31.6vw;
+                h2 { // title
+                    @extend %dashboardContainerh2Style-shared;
+                }
+        }
 }
 
-.stockTitle h2 {
-    font-family: $myfont;
-    margin: 0;
-    font-size: 1.3em;
-    padding: 3px;
-    margin-left: 10px;
-    font-weight: normal;
-}
-
-.stockTitle .fas {
+.fas { // cross icon to close container
     text-align: right;
     padding: 8px;
 }
 
-.right {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.left {
-    text-align: center;
-    padding: 12px;
-}
-
-.left p {
-    margin: -11px;
+#toDoInput { //Input field of the To Do List
+    margin: 20px 5px 0 40px;
+    width: 250px;
+    height: 25px;
     font-family: $myfont;
-    color: white;
 }
 
-.left h2 {
-    font-size: 2em;
-    margin: 0;
+li { // elements created inside of the ul tag
+    list-style-type: none;
+}
+
+#bouton { // Input's Button to add something in the to do list
+    cursor: pointer;
+    border: $myBorder;
+    padding: 3px 10px;
     font-family: $myfont;
-    color: white;
+    &:hover{ // Input's button hovered
+        background-color: $grey;
+    }
 }
 
-#thirdMain {
+.theCross{ // cross symbol to remove an item from the list
+    cursor: pointer;
+}
+
+.bigContainerStyle{ //
+    background-color: white;
+    border: 1px solid lightgray;
+    height: 55vh;
+    width: 48vw;
+        .stockTitle {
+            display: grid;
+            grid-template-columns: 30vw 18vw;
+            background-color: $greybgcolor;
+            height: 6vh;
+            width: 48vw;
+                h2{
+                    @extend %dashboardContainerh2Style-shared;
+                }
+        }
+}
+
+
+#thirdMain { // Container for the stock graph + beer popularity pie
     width: auto;
     display: grid;
     grid-template-columns: 48vw 31.6vw;
@@ -283,57 +261,14 @@ body {
     margin: 0px 20px 20px 23px;
 }
 
-#toDoInput {
-    margin: 20px;
+#fixingChartSize{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0px auto;
 }
 
-.tabcontent {
-    display: none;
-    height: 100%;
-}
-
-.beerInfo {
-    height: auto;
-    width: auto;
-    background-color: $whiteBackground;
-    border: 1px solid lightgrey; //border: 2px solid $greybgcolor;
-    //box-shadow: 0 0 15px #777777;
-    .container {
-        background: $whiteBackground;
-        img {
-            width: 100%;
-            padding:30px;
-            display: block; //margin: 10px auto;
-        }
-    }
-    h2 {
-        font-family: $myfont;
-        text-align: center;
-        font-weight: lighter;
-    }
-    button {
-        display: block;
-        margin: 20px auto;
-        padding:10px;
-    }
-    h3 {
-        font-family: $myfont;
-        margin: 5px 15px;
-        font-weight: bold;
-        padding:10px;
-    }
-    .appearText,
-    .aromaText,
-    .flavorText,
-    .mouthText,
-    .overallText {
-        text-align: justify;
-        margin: 5px 15px;
-        padding: 10px;
-        line-height: 30px;
-        font-family: $myfont;
-    }
-}
+// STYLE OF THE PRODUCTS SECTION 
 
 .prodDescriSpot {
     height: auto;
@@ -344,6 +279,93 @@ body {
     padding: 23px;
     padding-top: 0px;
 }
+
+.beerInfo {
+    height: auto;
+    width: auto;
+    background-color: $whiteBackground;
+    border: 1px solid lightgrey;
+        .container {
+            background: $whiteBackground;
+                img {
+                    width: 100%;
+                    padding:30px;
+                    display: block; //margin: 10px auto;
+                }
+        }
+        h2 {
+            font-family: $myfont;
+            text-align: center;
+            font-weight: lighter;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding:10px;
+        }
+        #expension{
+            display:none;
+                h3 {
+                    font-family: $myfont;
+                    margin: 5px 15px;
+                    font-weight: bold;
+                    padding:10px;
+                }
+                p{
+                    text-align: justify;
+                    margin: 5px 15px;
+                    padding: 10px;
+                    line-height: 30px;
+                }
+                .mouth {
+                    width: 5%;
+                        .cls-1,
+                        .cls-2 {
+                            stroke: #000;
+                            stroke-miterlimit: 10;
+                        }
+                }
+
+        }
+}
+
+
+// STYLE OF THE ORDER SECTION 
+
+.orderTicket {
+    height: auto;
+    width: auto;
+    background: $greybgcolor;
+    border: 1px solid lightgrey;
+    margin: 0px 24px 20px 22px;
+        .orderIdContainer {
+            margin: 5px 23px 5px 15px;
+            border-right: 1px solid black;
+            width: 170px;
+            height: 36px;
+                h2 {
+                    margin: 0;
+                    font-family: $myfont;
+                }
+        }
+        .orderLengthContainer {
+            margin: 12px 60px 0px 14px;
+            border-right: 1px solid black;
+            width: 102px;
+            height: 25px;
+                p {
+                    margin: 0;
+                    font-family: $myfont;
+                    font-weight: normal;
+                }
+        }
+}
+
+.moveToRight {
+    margin-right: 25px;
+}
+
+// STYLE OF THE EMPLOYEE SECTION 
 
 .trial {
     height: auto;
@@ -359,6 +381,12 @@ body {
     height: 400px;
     background: $greybgcolor;
     border: 1px solid lightgrey;
+    .staffIcon {
+        height: 113px;
+        width: 98px;
+        display: block;
+        margin: 28px auto;
+    }
     .staffName {
         text-align: center;
         font-family: $myfont;
@@ -367,154 +395,22 @@ body {
         @extend .staffName;
         color: $darkGreen;
     }
+    .whichOrder{
+        @extend .staffName;
+        margin:0;
+        font-weight: 600;
+    }
+
     .doing {
         @extend .staffName;
-        padding: 10px 30px;
-        animation: flash linear s infinite;
+        margin:0;
     }
-    @keyframes flash {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: .1;
-        }
-        100% {
-            opacity: 1;
-        }
+
+    div:nth-child(even) {
+        margin-top: 40px;
     }
-}
 
-#circle {
-    width: 65%;
-    margin: 17px 76px;
-    svg {
-        background-color: #f0f0f0;
-        transform: rotate(-90deg);
-        border-radius: 50%;
-    }
-}
 
-#c1 {
-    fill: none;
-    stroke: #c30;
-    stroke-width: 100;
-    stroke-dasharray: 10 314;
-}
-
-#c2 {
-    fill: none;
-    stroke: salmon;
-    stroke-width: 100;
-    stroke-dasharray: 50 314;
-    stroke-dashoffset: -10;
-}
-
-#c3 {
-    fill: none;
-    stroke: #abc;
-    stroke-width: 100;
-    stroke-dasharray: 43 314;
-    stroke-dashoffset: -60;
-}
-
-.mouth {
-    width: 5%;
-}
-
-.staffIcon {
-    height: 113px;
-    width: 98px;
-    display: block;
-    margin: 28px auto;
-}
-
-li {
-    list-style-type: none;
-    font-family: $myfont;
-}
-
-#toDoInput {
-    margin-left: 40px;
-    width: 250px;
-    height: 25px;
-    font-family: $myfont;
-}
-
-#bouton {
-    cursor: pointer;
-    border: $myBorder;
-    padding: 3px 10px;
-    font-family: $myfont;
-    &:hover{
-        background-color: $grey;
-    }
-}
-
-.theCross,
-.clicker {
-    cursor: pointer;
-}
-
-.orderTicket {
-    height: auto;
-    width: auto;
-    background: $greybgcolor;
-    border: 1px solid lightgrey;
-    margin: 0px 24px 20px 22px;
-    p {
-        font-family: $myfont;
-    }
-    &:hover{
-        background-color: $grey;
-    }
-}
-
-.sameLine {
-    display: inline-block;
-}
-
-.orderIdContainer {
-    margin: 5px 23px 5px 15px;
-    border-right: 1px solid black;
-    width: 170px;
-    height: 36px;
-    h2 {
-        margin: 0;
-        font-family: $myfont;
-    }
-}
-
-.orderLengthContainer {
-    margin: 12px 60px 0px 14px;
-    border-right: 1px solid black;
-    width: 102px;
-    height: 25px;
-    p {
-        margin: 0;
-        font-family: $myfont;
-        font-weight: normal;
-    }
-}
-
-.moveToRight {
-    margin-right: 25px;
-}
-
-.cls-1,
-.cls-2 {
-    stroke: #000;
-    stroke-miterlimit: 10;
-}
-
-#expension, .hide{
-    display:none;
-}
-#fixingChartSize{
-    width: 300px;
-    height: 300px;
-    display: block;
-    margin: 0px auto;
 }
 
 #customize{
@@ -526,130 +422,147 @@ li {
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed;
+    padding-top: 80px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#submit {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 15px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-}
-
-#submit:hover {
-    background-color: #45a049;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+        .modal-content {
+            background-color:$greybgcolor;
+            margin: auto;
+            padding: 0px;
+            border: 1px solid #888;
+            width: 80%;
+                .close {
+                    color: #aaaaaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    padding-right: 10px;
+                        &:hover{
+                            color: $grey;
+                            text-decoration: none;
+                            cursor: pointer;                       
+                        }
+                }
+        }
 }
 
 #modalForm{
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-color:$whiteBackground;
+    padding: 20px 35px 35px 35px;
 }
 
-.formContainer{
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-        }
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-}
-/* On mouse-over, add a grey background color */
-.formcontainer:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.formcontainer input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.formcontainer input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.formcontainer .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-}
-
-.formcontainer input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: -9px 0 0 0;
+    display: inline-block;
+    border: 1px solid $myBorder;
+    box-sizing: border-box;
 }
 
 .CheckList{
     margin-bottom:20px;
+        .formContainer{
+            margin-right:30px;
+                input[type=checkbox]{
+                    cursor: pointer;
+                }
+        }
+        
+} 
+
+#submit {
+    width: 100%;
+    background-color: $greenSubmitBtn;
+    color: white;
+    padding: 14px 20px;
+    margin: 35px 0 0 0;
+    cursor: pointer;
+    text-align: center;
+        &:hover {
+            background-color:$darkGreen;
+        }
+}
+
+// --------------------------------------------------------------- //
+
+.beerInfoContainer{
+    background-color: $whiteBackground;
+    border: $myBorder;
+    height: auto;
+    margin: 0 25px 25px 25px;
+    display: grid;
+    grid-template-columns: 300px 2fr;
+    grid-template-areas: 
+    "div1 div2"
+    "full full";
+
+    .boxLeft {
+        display: grid;
+        grid-area : div1;
+        img{
+            width: 90%;
+            padding:25px;
+        }
+    }
+    
+   .boxRight{
+        display:grid;
+        grid-area : div2;
+        padding: 25px 52px 25px 0;
+        overflow:scroll;
+            h2{
+                margin:0;
+            }
+            p{
+                margin:0;
+                text-align: justify;
+            }
+            h4{
+                margin:0;
+            }
+    } 
+
+    .expend{
+        background-color: #537e4c;
+        grid-area: full;
+    }
+}
+
+.beerInfoContainerBis{
+    background-color: $whiteBackground;
+    border: $myBorder;
+    height: 270px;
+    margin: 0 25px 25px 25px;
+    display: grid;
+    grid-template-columns: 300px 2fr;
+
+    .boxLeftBis {
+        display: grid;
+        img{
+            width: 90%;
+            padding:25px;
+        }
+    }
+    
+   .boxRightBis{
+        display:grid;
+        padding: 25px 52px 25px 0;
+        overflow:scroll;
+            h2{
+                margin:0;
+            }
+            p{
+                margin:0;
+                text-align: justify;
+            }
+            h4{
+                margin:0;
+            }
+    } 
 }

@@ -36,6 +36,7 @@ let beerSection = document.querySelector('.prodDescriSpot');
 let productTemplate = document.querySelector('.BeerTemplate').content;
 let beerTypes = [];
 
+
 //EMPLOYEES SECTION DECLARATION
 let TotalEmployees = document.querySelector('#numTotalOfEmployees');
 let employeeSection = document.querySelector('.trial');
@@ -60,7 +61,7 @@ function getMyData() {
         idsThatHaveOrdered[ele.id] = 1
     }
     numOrders.innerHTML = idsThatHaveOrdered.length;
-
+    totalOrderNum.textContent = idsThatHaveOrdered.length;
     showMyBeersData (myJson.beertypes);
     updateClientList(myJson.serving);
     updateBartenderStatus(myJson.bartenders);
@@ -129,20 +130,48 @@ function updateBartenderStatus(staffData) {
             employeeName.textContent = bartender.name;
             let employeeStatus = cloneStaff.querySelector(".status");
             let employeeDoing = cloneStaff.querySelector(".doing");
+            let orderInCharge = cloneStaff.querySelector(".whichOrder");
             let dynamicDomElements = {};
             dynamicDomElements.statusElement = employeeStatus;
             dynamicDomElements.taskElement = employeeDoing;
+            dynamicDomElements.orderServing = orderInCharge;
             bartenderDynamicElements[bartender.name] = dynamicDomElements;
             employeeSection.appendChild(cloneStaff);
         }
         bartenderDynamicElements[bartender.name].statusElement.textContent = bartender.status;
+
+        if (bartender.status == "WORKING"){
+            bartenderDynamicElements[bartender.name].orderServing.textContent = "Serving order #" + bartender.servingCustomer;
+        } else {
+            bartenderDynamicElements[bartender.name].orderServing.textContent = "";
+        }
+        
+
         let taskString = "";
         switch(bartender.statusDetail) {
+            case "startServing":
+                taskString = "Start serving customer";
+            break;
+
+            case "reserveTap":
+                taskString = "Waiting for the needed tap to be available" 
+
             case "pourBeer":
-                taskString = "Pouring beer for client #" + bartender.servingCustomer + " using tap " + bartender.usingTap;    
+                taskString = "Pouring beer using tap " + bartender.usingTap;    
             break;
-            case "receivingPayment":
+
+            case "releaseTap" :
+                taskString = "Done pouring beer";
             break;
+
+            case "receivePayment":
+                taskString = "Receiving payment";
+            break;
+
+            case "endServing":
+                taskString = "Done";
+            break;
+
             default:
                 taskString = "Waiting for customer";
             break;
@@ -159,7 +188,7 @@ let clients = [];
 let orderedDrinksTemplate = document.querySelector('.drinksOrderedTemplate').content;
 let totalBeersSold = 0;
 let totalBeerSoldElement = document.querySelector('#numTotalBeer');
-
+let totalOrderBox = document.getElementById("#totalOrderNum");
 let beersOrdered = {};
 
 function updateClientList(clientData) {
@@ -189,8 +218,7 @@ function updateClientList(clientData) {
             });
             clientSection.appendChild(cloneClientList);
             console.log(beersOrdered);
-
-
+            
         }
     });
 }

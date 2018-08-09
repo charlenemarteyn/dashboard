@@ -1,3 +1,16 @@
+.topBoxesWrapper .divYellow, .topBoxesWrapper .divSalmon, .topBoxesWrapper .divRed, .topBoxesWrapper .divDarkGreen, .topBoxesWrapper .divLightGreen {
+  display: grid;
+  grid-template-columns: 125px 70px;
+  height: 81px;
+  width: 195px; }
+
+.smallContainerStyle .sectiontitle h2, .bigContainerStyle .stockTitle h2 {
+  margin: 0;
+  font-size: 1.3em;
+  padding: 3px;
+  margin-left: 10px;
+  font-weight: normal; }
+
 body {
   margin: 0; }
 
@@ -8,139 +21,69 @@ body {
 #wrapper {
   display: grid;
   grid-template-columns: 2fr 10fr; }
-  #wrapper .icon-bar {
-    height: auto;
-    background-color: #e7e7e7; }
-    #wrapper .icon-bar #profile {
-      height: 225px;
-      background-color: #e7e7e7;
-      margin: 20px 20px; }
-      #wrapper .icon-bar #profile p {
-        font-family: "avenir";
-        text-align: center; }
-    #wrapper .icon-bar .tablink {
-      background-color: #e7e7e7;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 20px 17px;
-      font-size: 17px;
-      width: 100%;
-      text-align: left; }
-      #wrapper .icon-bar .tablink:hover {
-        background-color: grey;
-        color: #e7e7e7; }
-      #wrapper .icon-bar .tablink .fa-lg {
-        padding-right: 12px; }
-  #wrapper #Dashboard, #wrapper #Clients, #wrapper #Products, #wrapper #Staff {
-    background-color: white;
-    display: grid;
-    grid-template-rows: 10vh 27vh 48vh 48vh; }
-    #wrapper #Dashboard .ticketbar, #wrapper #Clients .ticketbar, #wrapper #Products .ticketbar, #wrapper #Staff .ticketbar {
-      background-color: white;
-      height: 9vh;
-      border-bottom: 1px solid lightgrey; }
-      #wrapper #Dashboard .ticketbar .logOut, #wrapper #Clients .ticketbar .logOut, #wrapper #Products .ticketbar .logOut, #wrapper #Staff .ticketbar .logOut {
-        background-color: #e7e7e7;
-        padding: 7px 14px;
-        font-size: 15px;
-        margin: 12px 12px;
-        cursor: pointer;
-        float: right; }
-        #wrapper #Dashboard .ticketbar .logOut:hover, #wrapper #Clients .ticketbar .logOut:hover, #wrapper #Products .ticketbar .logOut:hover, #wrapper #Staff .ticketbar .logOut:hover {
-          background-color: grey; }
-    #wrapper #Dashboard .ticketsection, #wrapper #Clients .ticketsection, #wrapper #Products .ticketsection, #wrapper #Staff .ticketsection {
-      padding: 23px; }
-      #wrapper #Dashboard .ticketsection h1, #wrapper #Clients .ticketsection h1, #wrapper #Products .ticketsection h1, #wrapper #Staff .ticketsection h1 {
-        margin: 0;
-        font-family: "avenir";
-        padding-bottom: 5px; }
-      #wrapper #Dashboard .ticketsection .topBoxesWrapper, #wrapper #Clients .ticketsection .topBoxesWrapper, #wrapper #Products .ticketsection .topBoxesWrapper, #wrapper #Staff .ticketsection .topBoxesWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 10px; }
-        #wrapper #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Dashboard #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Dashboard .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Clients #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Clients .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Products #Staff .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff #Products .ticketsection .topBoxesWrapper .topBoxes, #wrapper #Staff .ticketsection .topBoxesWrapper .topBoxes {
-          height: 81px;
-          width: 195px; }
-        #wrapper #Dashboard .ticketsection .topBoxesWrapper #inQueue, #wrapper #Clients .ticketsection .topBoxesWrapper #inQueue, #wrapper #Products .ticketsection .topBoxesWrapper #inQueue, #wrapper #Staff .ticketsection .topBoxesWrapper #inQueue {
-          display: grid;
-          grid-template-columns: 125px 70px;
-          background-color: #f8d278; }
-        #wrapper #Dashboard .ticketsection .topBoxesWrapper #served, #wrapper #Clients .ticketsection .topBoxesWrapper #served, #wrapper #Products .ticketsection .topBoxesWrapper #served, #wrapper #Staff .ticketsection .topBoxesWrapper #served {
-          display: grid;
-          grid-template-columns: 125px 70px;
-          background-color: #f86e57; }
-        #wrapper #Dashboard .ticketsection .topBoxesWrapper #totalOrders, #wrapper #Clients .ticketsection .topBoxesWrapper #totalOrders, #wrapper #Products .ticketsection .topBoxesWrapper #totalOrders, #wrapper #Staff .ticketsection .topBoxesWrapper #totalOrders {
-          display: grid;
-          grid-template-columns: 125px 70px;
-          background-color: #e21f3f; }
-        #wrapper #Dashboard .ticketsection .topBoxesWrapper #employees, #wrapper #Clients .ticketsection .topBoxesWrapper #employees, #wrapper #Products .ticketsection .topBoxesWrapper #employees, #wrapper #Staff .ticketsection .topBoxesWrapper #employees {
-          display: grid;
-          grid-template-columns: 125px 70px;
-          background-color: #537e4c; }
-        #wrapper #Dashboard .ticketsection .topBoxesWrapper #timeleft, #wrapper #Clients .ticketsection .topBoxesWrapper #timeleft, #wrapper #Products .ticketsection .topBoxesWrapper #timeleft, #wrapper #Staff .ticketsection .topBoxesWrapper #timeleft {
-          display: grid;
-          grid-template-columns: 125px 70px;
-          background-color: #b5d775; }
 
-#toDo,
-#beerPop {
+.icon-bar {
+  height: auto;
+  background-color: #e7e7e7; }
+  .icon-bar #profile {
+    height: 225px;
+    background-color: #e7e7e7;
+    margin: 20px 20px; }
+    .icon-bar #profile p {
+      text-align: center; }
+  .icon-bar .tablink {
+    background-color: #e7e7e7;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 17px;
+    font-size: 17px;
+    width: 100%;
+    text-align: left; }
+    .icon-bar .tablink:hover {
+      background-color: grey;
+      color: #e7e7e7; }
+    .icon-bar .tablink .fa-lg {
+      padding-right: 12px; }
+
+.tabcontent {
+  display: none;
+  height: 100%; }
+
+.ticketbar {
   background-color: white;
-  border: 1px solid lightgrey;
-  height: 55vh;
-  width: 31.6vw; }
+  height: 9vh;
+  border-bottom: 1px solid lightgrey; }
+  .ticketbar .logOut {
+    background-color: #e7e7e7;
+    padding: 7px 14px;
+    font-size: 15px;
+    margin: 12px 12px;
+    cursor: pointer;
+    float: right; }
+    .ticketbar .logOut:hover {
+      background-color: grey; }
 
-.sectiontitle {
+.ticketsection {
+  padding: 23px; }
+  .ticketsection h1 {
+    margin: 0;
+    padding-bottom: 5px; }
+
+.topBoxesWrapper {
   display: grid;
-  grid-template-columns: 20vw 11.6vw;
-  background-color: #e7e7e7;
-  height: 6vh;
-  width: 31.6vw; }
-
-.sectiontitle h2 {
-  font-family: "avenir";
-  margin: 0;
-  font-size: 1.3em;
-  padding: 3px;
-  margin-left: 10px;
-  font-weight: normal; }
-
-.sectiontitle .fas {
-  text-align: right;
-  padding: 8px; }
-
-#stockSection,
-#notsure {
-  background-color: white;
-  border: 1px solid lightgray;
-  height: 55vh;
-  width: 48vw; }
-
-.secondMain {
-  width: auto;
-  display: grid;
-  grid-template-columns: 31.6vw 48vw;
-  grid-gap: 16px;
-  margin: 0px 20px 20px 23px; }
-
-.stockTitle {
-  display: grid;
-  grid-template-columns: 30vw 18vw;
-  background-color: #e7e7e7;
-  height: 6vh;
-  width: 48vw; }
-
-.stockTitle h2 {
-  font-family: "avenir";
-  margin: 0;
-  font-size: 1.3em;
-  padding: 3px;
-  margin-left: 10px;
-  font-weight: normal; }
-
-.stockTitle .fas {
-  text-align: right;
-  padding: 8px; }
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px; }
+  .topBoxesWrapper .divYellow {
+    background-color: #f8d278; }
+  .topBoxesWrapper .divSalmon {
+    background-color: #f86e57; }
+  .topBoxesWrapper .divRed {
+    background-color: #e21f3f; }
+  .topBoxesWrapper .divDarkGreen {
+    background-color: #537e4c; }
+  .topBoxesWrapper .divLightGreen {
+    background-color: #b5d775; }
 
 .right {
   text-align: center;
@@ -149,17 +92,76 @@ body {
 .left {
   text-align: center;
   padding: 12px; }
+  .left p {
+    margin: -11px;
+    color: white; }
+  .left h2 {
+    font-size: 2em;
+    margin: 0;
+    color: white; }
 
-.left p {
-  margin: -11px;
-  font-family: "avenir";
-  color: white; }
+.sameLine {
+  display: inline-block; }
 
-.left h2 {
-  font-size: 2em;
-  margin: 0;
-  font-family: "avenir";
-  color: white; }
+#Dashboard {
+  background-color: white;
+  display: grid;
+  grid-template-rows: 10vh 27vh 48vh 48vh; }
+
+.secondMain {
+  width: auto;
+  display: grid;
+  grid-template-columns: 31.6vw 48vw;
+  grid-gap: 16px;
+  margin: 0px 20px 20px 23px; }
+
+.smallContainerStyle {
+  background-color: white;
+  border: 1px solid lightgrey;
+  height: 55vh;
+  width: 31.6vw; }
+  .smallContainerStyle .sectiontitle {
+    display: grid;
+    grid-template-columns: 20vw 11.6vw;
+    background-color: #e7e7e7;
+    height: 6vh;
+    width: 31.6vw; }
+
+.fas {
+  text-align: right;
+  padding: 8px; }
+
+#toDoInput {
+  margin: 20px 5px 0 40px;
+  width: 250px;
+  height: 25px;
+  font-family: "avenir"; }
+
+li {
+  list-style-type: none; }
+
+#bouton {
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  padding: 3px 10px;
+  font-family: "avenir"; }
+  #bouton:hover {
+    background-color: grey; }
+
+.theCross {
+  cursor: pointer; }
+
+.bigContainerStyle {
+  background-color: white;
+  border: 1px solid lightgray;
+  height: 55vh;
+  width: 48vw; }
+  .bigContainerStyle .stockTitle {
+    display: grid;
+    grid-template-columns: 30vw 18vw;
+    background-color: #e7e7e7;
+    height: 6vh;
+    width: 48vw; }
 
 #thirdMain {
   width: auto;
@@ -168,12 +170,20 @@ body {
   grid-gap: 16px;
   margin: 0px 20px 20px 23px; }
 
-#toDoInput {
-  margin: 20px; }
+#fixingChartSize {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0px auto; }
 
-.tabcontent {
-  display: none;
-  height: 100%; }
+.prodDescriSpot {
+  height: auto;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 20px;
+  padding: 23px;
+  padding-top: 0px; }
 
 .beerInfo {
   height: auto;
@@ -194,30 +204,51 @@ body {
     display: block;
     margin: 20px auto;
     padding: 10px; }
-  .beerInfo h3 {
-    font-family: "avenir";
-    margin: 5px 15px;
-    font-weight: bold;
-    padding: 10px; }
-  .beerInfo .appearText,
-  .beerInfo .aromaText,
-  .beerInfo .flavorText,
-  .beerInfo .mouthText,
-  .beerInfo .overallText {
-    text-align: justify;
-    margin: 5px 15px;
-    padding: 10px;
-    line-height: 30px;
-    font-family: "avenir"; }
+  .beerInfo #expension {
+    display: none; }
+    .beerInfo #expension h3 {
+      font-family: "avenir";
+      margin: 5px 15px;
+      font-weight: bold;
+      padding: 10px; }
+    .beerInfo #expension p {
+      text-align: justify;
+      margin: 5px 15px;
+      padding: 10px;
+      line-height: 30px; }
+    .beerInfo #expension .mouth {
+      width: 5%; }
+      .beerInfo #expension .mouth .cls-1,
+      .beerInfo #expension .mouth .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10; }
 
-.prodDescriSpot {
+.orderTicket {
   height: auto;
-  background-color: white;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px 20px;
-  padding: 23px;
-  padding-top: 0px; }
+  width: auto;
+  background: #e7e7e7;
+  border: 1px solid lightgrey;
+  margin: 0px 24px 20px 22px; }
+  .orderTicket .orderIdContainer {
+    margin: 5px 23px 5px 15px;
+    border-right: 1px solid black;
+    width: 170px;
+    height: 36px; }
+    .orderTicket .orderIdContainer h2 {
+      margin: 0;
+      font-family: "avenir"; }
+  .orderTicket .orderLengthContainer {
+    margin: 12px 60px 0px 14px;
+    border-right: 1px solid black;
+    width: 102px;
+    height: 25px; }
+    .orderTicket .orderLengthContainer p {
+      margin: 0;
+      font-family: "avenir";
+      font-weight: normal; }
+
+.moveToRight {
+  margin-right: 25px; }
 
 .trial {
   height: auto;
@@ -232,131 +263,23 @@ body {
   height: 400px;
   background: #e7e7e7;
   border: 1px solid lightgrey; }
-  .secondtrial .staffName, .secondtrial .status, .secondtrial .doing {
+  .secondtrial .staffIcon {
+    height: 113px;
+    width: 98px;
+    display: block;
+    margin: 28px auto; }
+  .secondtrial .staffName, .secondtrial .status, .secondtrial .whichOrder, .secondtrial .doing {
     text-align: center;
     font-family: "avenir"; }
   .secondtrial .status {
     color: #537e4c; }
+  .secondtrial .whichOrder {
+    margin: 0;
+    font-weight: 600; }
   .secondtrial .doing {
-    padding: 10px 30px;
-    animation: flash linear s infinite; }
-
-@keyframes flash {
-  0% {
-    opacity: 1; }
-  50% {
-    opacity: .1; }
-  100% {
-    opacity: 1; } }
-
-#circle {
-  width: 65%;
-  margin: 17px 76px; }
-  #circle svg {
-    background-color: #f0f0f0;
-    transform: rotate(-90deg);
-    border-radius: 50%; }
-
-#c1 {
-  fill: none;
-  stroke: #c30;
-  stroke-width: 100;
-  stroke-dasharray: 10 314; }
-
-#c2 {
-  fill: none;
-  stroke: salmon;
-  stroke-width: 100;
-  stroke-dasharray: 50 314;
-  stroke-dashoffset: -10; }
-
-#c3 {
-  fill: none;
-  stroke: #abc;
-  stroke-width: 100;
-  stroke-dasharray: 43 314;
-  stroke-dashoffset: -60; }
-
-.mouth {
-  width: 5%; }
-
-.staffIcon {
-  height: 113px;
-  width: 98px;
-  display: block;
-  margin: 28px auto; }
-
-li {
-  list-style-type: none;
-  font-family: "avenir"; }
-
-#toDoInput {
-  margin-left: 40px;
-  width: 250px;
-  height: 25px;
-  font-family: "avenir"; }
-
-#bouton {
-  cursor: pointer;
-  border: 1px solid lightgrey;
-  padding: 3px 10px;
-  font-family: "avenir"; }
-  #bouton:hover {
-    background-color: grey; }
-
-.theCross,
-.clicker {
-  cursor: pointer; }
-
-.orderTicket {
-  height: auto;
-  width: auto;
-  background: #e7e7e7;
-  border: 1px solid lightgrey;
-  margin: 0px 24px 20px 22px; }
-  .orderTicket p {
-    font-family: "avenir"; }
-  .orderTicket:hover {
-    background-color: grey; }
-
-.sameLine {
-  display: inline-block; }
-
-.orderIdContainer {
-  margin: 5px 23px 5px 15px;
-  border-right: 1px solid black;
-  width: 170px;
-  height: 36px; }
-  .orderIdContainer h2 {
-    margin: 0;
-    font-family: "avenir"; }
-
-.orderLengthContainer {
-  margin: 12px 60px 0px 14px;
-  border-right: 1px solid black;
-  width: 102px;
-  height: 25px; }
-  .orderLengthContainer p {
-    margin: 0;
-    font-family: "avenir";
-    font-weight: normal; }
-
-.moveToRight {
-  margin-right: 25px; }
-
-.cls-1,
-.cls-2 {
-  stroke: #000;
-  stroke-miterlimit: 10; }
-
-#expension, .hide {
-  display: none; }
-
-#fixingChartSize {
-  width: 300px;
-  height: 300px;
-  display: block;
-  margin: 0px auto; }
+    margin: 0; }
+  .secondtrial div:nth-child(even) {
+    margin-top: 40px; }
 
 #customize {
   font-weight: normal;
@@ -367,121 +290,110 @@ li {
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
+  padding-top: 80px;
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */ }
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; }
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold; }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer; }
-
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; }
-
-#submit {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 15px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center; }
-
-#submit:hover {
-  background-color: #45a049; }
+  background-color: rgba(0, 0, 0, 0.4); }
+  .modal .modal-content {
+    background-color: #e7e7e7;
+    margin: auto;
+    padding: 0px;
+    border: 1px solid #888;
+    width: 80%; }
+    .modal .modal-content .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      padding-right: 10px; }
+      .modal .modal-content .close:hover {
+        color: grey;
+        text-decoration: none;
+        cursor: pointer; }
 
 #modalForm {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px; }
+  background-color: white;
+  padding: 20px 35px 35px 35px; }
 
-.formContainer {
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px; }
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee; }
-
-/* On mouse-over, add a grey background color */
-.formcontainer:hover input ~ .checkmark {
-  background-color: #ccc; }
-
-/* When the checkbox is checked, add a blue background */
-.formcontainer input:checked ~ .checkmark {
-  background-color: #2196F3; }
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none; }
-
-/* Show the checkmark when checked */
-.formcontainer input:checked ~ .checkmark:after {
-  display: block; }
-
-.formcontainer .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg); }
-
-.formcontainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer; }
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: -9px 0 0 0;
+  display: inline-block;
+  border: 1px solid 1px solid lightgrey;
+  box-sizing: border-box; }
 
 .CheckList {
   margin-bottom: 20px; }
+  .CheckList .formContainer {
+    margin-right: 30px; }
+    .CheckList .formContainer input[type=checkbox] {
+      cursor: pointer; }
+
+#submit {
+  width: 100%;
+  background-color: #5d8e56;
+  color: white;
+  padding: 14px 20px;
+  margin: 35px 0 0 0;
+  cursor: pointer;
+  text-align: center; }
+  #submit:hover {
+    background-color: #537e4c; }
+
+.beerInfoContainer {
+  background-color: white;
+  border: 1px solid lightgrey;
+  height: auto;
+  margin: 0 25px 25px 25px;
+  display: grid;
+  grid-template-columns: 300px 2fr;
+  grid-template-areas: "div1 div2" "full full"; }
+  .beerInfoContainer .boxLeft {
+    display: grid;
+    grid-area: div1; }
+    .beerInfoContainer .boxLeft img {
+      width: 90%;
+      padding: 25px; }
+  .beerInfoContainer .boxRight {
+    display: grid;
+    grid-area: div2;
+    padding: 25px 52px 25px 0;
+    overflow: scroll; }
+    .beerInfoContainer .boxRight h2 {
+      margin: 0; }
+    .beerInfoContainer .boxRight p {
+      margin: 0;
+      text-align: justify; }
+    .beerInfoContainer .boxRight h4 {
+      margin: 0; }
+  .beerInfoContainer .expend {
+    background-color: #537e4c;
+    grid-area: full; }
+
+.beerInfoContainerBis {
+  background-color: white;
+  border: 1px solid lightgrey;
+  height: 270px;
+  margin: 0 25px 25px 25px;
+  display: grid;
+  grid-template-columns: 300px 2fr; }
+  .beerInfoContainerBis .boxLeftBis {
+    display: grid; }
+    .beerInfoContainerBis .boxLeftBis img {
+      width: 90%;
+      padding: 25px; }
+  .beerInfoContainerBis .boxRightBis {
+    display: grid;
+    padding: 25px 52px 25px 0;
+    overflow: scroll; }
+    .beerInfoContainerBis .boxRightBis h2 {
+      margin: 0; }
+    .beerInfoContainerBis .boxRightBis p {
+      margin: 0;
+      text-align: justify; }
+    .beerInfoContainerBis .boxRightBis h4 {
+      margin: 0; }
