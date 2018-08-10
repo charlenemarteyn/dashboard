@@ -163,6 +163,7 @@ body {
             font-size: 2em;
             margin: 0;
             color:$whiteBackground;
+            font-weight: lighter;
         }
     }
 
@@ -171,28 +172,18 @@ body {
     display: inline-block;
 }
     
-
 // STYLE OF DASHBOARD SECTION 
-
-#Dashboard { // Main structure of the dashboard section
-    background-color: $whiteBackground;
-    display: grid;
-    grid-template-rows: 10vh 27vh 48vh 48vh;
-}
-
 .secondMain { // Container for the to do list + volume of tap beer graph
     width: auto;
     display: grid;
-    grid-template-columns: 31.6vw 48vw;
-    grid-gap: 16px;
+    grid-template-columns: 2fr 4fr;
+    grid-gap: 12px;
     margin: 0px 20px 20px 23px;
 }
 
 .smallContainerStyle{ // Styling of the small containers 
-    background-color: white;
-    border: 1px solid lightgrey;
-    height: 55vh;
-    width: 31.6vw;
+    background-color:$whiteBackground;
+    border: $myBorder;
         .sectiontitle { // container for the title
             display: grid;
             grid-template-columns: 20vw 11.6vw;
@@ -238,8 +229,6 @@ li { // elements created inside of the ul tag
 .bigContainerStyle{ //
     background-color: white;
     border: 1px solid lightgray;
-    height: 55vh;
-    width: 48vw;
         .stockTitle {
             display: grid;
             grid-template-columns: 30vw 18vw;
@@ -256,8 +245,8 @@ li { // elements created inside of the ul tag
 #thirdMain { // Container for the stock graph + beer popularity pie
     width: auto;
     display: grid;
-    grid-template-columns: 48vw 31.6vw;
-    grid-gap: 16px;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 12px;
     margin: 0px 20px 20px 23px;
 }
 
@@ -273,10 +262,6 @@ li { // elements created inside of the ul tag
 .prodDescriSpot {
     height: auto;
     background-color: $whiteBackground;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px 20px;
-    padding: 23px;
     padding-top: 0px;
 }
 
@@ -285,50 +270,89 @@ li { // elements created inside of the ul tag
     width: auto;
     background-color: $whiteBackground;
     border: 1px solid lightgrey;
-        .container {
-            background: $whiteBackground;
-                img {
+        }
+        .beerInfoContainer{
+            background-color: $whiteBackground;
+            border: $myBorder;
+            height: auto;
+            margin: 0 25px 25px 25px;
+            display: grid;
+            grid-template-columns: 320px auto;
+            grid-template-areas: 
+            "div1 div2";
+        
+            .boxLeft {
+                display: grid;
+                grid-area : div1;
+                img{
                     width: 100%;
-                    padding:30px;
-                    display: block; //margin: 10px auto;
                 }
-        }
-        h2 {
-            font-family: $myfont;
-            text-align: center;
-            font-weight: lighter;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding:10px;
-        }
-        #expension{
-            display:none;
-                h3 {
+            }
+            
+           .boxRight{
+                display:grid;
+                grid-area : div2;
+                padding: 25px 52px 25px 52px;
+                    h2{
+                        margin:0 150px 20px 150px;
+                        text-align: center;
+                        font-weight: normal;
+
+                    border-bottom: 1px solid $grey;
+                    }
+                    h3{
+                        margin:0;
+                        text-align: right;
+                        font-weight: lighter;
+                    }
+                    .overallText{
+                        margin:0 0 20px 0;
+                        text-align: center;
+                        line-height:30px;
+                    }
+                    h4{
+                        margin:0;
+                    }
+                    .myBtn, .myBtn2{
+                        display:block;
+                        margin:0 auto;
+                        width:100px;
+                        height:40px;
+                        cursor: pointer;
+                        border:$myBorder;
+                        padding:10px;
+                        background-color: $greybgcolor;
+                            &:hover{
+                                background-color: $whiteBackground;
+                            }
+                    }
+            } 
+        
+            .expend{
+                display: none;
+                margin-top: 30px;
+            
+                h4 {
                     font-family: $myfont;
-                    margin: 5px 15px;
                     font-weight: bold;
-                    padding:10px;
                 }
                 p{
                     text-align: justify;
                     margin: 5px 15px;
-                    padding: 10px;
                     line-height: 30px;
+                    padding-bottom: 30px;
                 }
                 .mouth {
-                    width: 5%;
+                    width: 4%;
+                    margin-left: 8px;
                         .cls-1,
                         .cls-2 {
                             stroke: #000;
                             stroke-miterlimit: 10;
                         }
-                }
-
+                } 
+            }
         }
-}
-
 
 // STYLE OF THE ORDER SECTION 
 
@@ -346,6 +370,7 @@ li { // elements created inside of the ul tag
                 h2 {
                     margin: 0;
                     font-family: $myfont;
+                    font-weight: lighter;
                 }
         }
         .orderLengthContainer {
@@ -448,6 +473,9 @@ li { // elements created inside of the ul tag
                             cursor: pointer;                       
                         }
                 }
+                h3{
+                    margin-left:20px;
+                }
         }
 }
 
@@ -490,79 +518,3 @@ input[type=text]{
 }
 
 // --------------------------------------------------------------- //
-
-.beerInfoContainer{
-    background-color: $whiteBackground;
-    border: $myBorder;
-    height: auto;
-    margin: 0 25px 25px 25px;
-    display: grid;
-    grid-template-columns: 300px 2fr;
-    grid-template-areas: 
-    "div1 div2"
-    "full full";
-
-    .boxLeft {
-        display: grid;
-        grid-area : div1;
-        img{
-            width: 90%;
-            padding:25px;
-        }
-    }
-    
-   .boxRight{
-        display:grid;
-        grid-area : div2;
-        padding: 25px 52px 25px 0;
-        overflow:scroll;
-            h2{
-                margin:0;
-            }
-            p{
-                margin:0;
-                text-align: justify;
-            }
-            h4{
-                margin:0;
-            }
-    } 
-
-    .expend{
-        background-color: #537e4c;
-        grid-area: full;
-    }
-}
-
-.beerInfoContainerBis{
-    background-color: $whiteBackground;
-    border: $myBorder;
-    height: 270px;
-    margin: 0 25px 25px 25px;
-    display: grid;
-    grid-template-columns: 300px 2fr;
-
-    .boxLeftBis {
-        display: grid;
-        img{
-            width: 90%;
-            padding:25px;
-        }
-    }
-    
-   .boxRightBis{
-        display:grid;
-        padding: 25px 52px 25px 0;
-        overflow:scroll;
-            h2{
-                margin:0;
-            }
-            p{
-                margin:0;
-                text-align: justify;
-            }
-            h4{
-                margin:0;
-            }
-    } 
-}

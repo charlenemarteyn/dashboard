@@ -76,17 +76,29 @@ function showMyBeersData (beerData){
             let cloneBeer = productTemplate.cloneNode(true);
             let beerName = cloneBeer.querySelector(".beerName");
             beerName.textContent = beertype.name;
+            let alcohol = cloneBeer.querySelector(".alc");
+            alcohol.textContent = "alc " + beertype.alc + "% vol.";
             
-            let expend = cloneBeer.querySelector("#expension");
+            let expend = cloneBeer.querySelector(".expend");
             let readMoreButton = cloneBeer.querySelector(".myBtn");
+            let readLessButton = cloneBeer.querySelector(".myBtn2");
     
             readMoreButton.addEventListener("click", displayExpension);
     
             function displayExpension(){
                 expend.style.display = "block";
-                readMoreButton.display = "none";
+                readMoreButton.style.display = "none";
             }
     
+            readLessButton.addEventListener("click", hideExpension);
+
+            function hideExpension(){
+                expend.style.display = "none";
+                readMoreButton.style.display = "block";
+            }
+
+
+
             let beerAppear = cloneBeer.querySelector(".appearText");
             beerAppear.textContent = beertype.description.appearance;
             let beerAroma = cloneBeer.querySelector(".aromaText");
@@ -99,6 +111,8 @@ function showMyBeersData (beerData){
             beerOverall.textContent = beertype.description.overallImpression;
             let beerImg = cloneBeer.querySelector("img");
             beerImg.src = "images/" + beertype.label;
+            let categ = cloneBeer.querySelector(".categoryText");
+            categ.textContent = beertype.category;
     
             beerSection.appendChild(cloneBeer);
     

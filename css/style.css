@@ -98,28 +98,22 @@ body {
   .left h2 {
     font-size: 2em;
     margin: 0;
-    color: white; }
+    color: white;
+    font-weight: lighter; }
 
 .sameLine {
   display: inline-block; }
 
-#Dashboard {
-  background-color: white;
-  display: grid;
-  grid-template-rows: 10vh 27vh 48vh 48vh; }
-
 .secondMain {
   width: auto;
   display: grid;
-  grid-template-columns: 31.6vw 48vw;
-  grid-gap: 16px;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 12px;
   margin: 0px 20px 20px 23px; }
 
 .smallContainerStyle {
   background-color: white;
-  border: 1px solid lightgrey;
-  height: 55vh;
-  width: 31.6vw; }
+  border: 1px solid lightgrey; }
   .smallContainerStyle .sectiontitle {
     display: grid;
     grid-template-columns: 20vw 11.6vw;
@@ -153,9 +147,7 @@ li {
 
 .bigContainerStyle {
   background-color: white;
-  border: 1px solid lightgray;
-  height: 55vh;
-  width: 48vw; }
+  border: 1px solid lightgray; }
   .bigContainerStyle .stockTitle {
     display: grid;
     grid-template-columns: 30vw 18vw;
@@ -166,8 +158,8 @@ li {
 #thirdMain {
   width: auto;
   display: grid;
-  grid-template-columns: 48vw 31.6vw;
-  grid-gap: 16px;
+  grid-template-columns: 4fr 2fr;
+  grid-gap: 12px;
   margin: 0px 20px 20px 23px; }
 
 #fixingChartSize {
@@ -179,10 +171,6 @@ li {
 .prodDescriSpot {
   height: auto;
   background-color: white;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px 20px;
-  padding: 23px;
   padding-top: 0px; }
 
 .beerInfo {
@@ -190,36 +178,66 @@ li {
   width: auto;
   background-color: white;
   border: 1px solid lightgrey; }
-  .beerInfo .container {
-    background: white; }
-    .beerInfo .container img {
-      width: 100%;
-      padding: 30px;
-      display: block; }
-  .beerInfo h2 {
-    font-family: "avenir";
-    text-align: center;
-    font-weight: lighter; }
-  .beerInfo button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px; }
-  .beerInfo #expension {
-    display: none; }
-    .beerInfo #expension h3 {
+
+.beerInfoContainer {
+  background-color: white;
+  border: 1px solid lightgrey;
+  height: auto;
+  margin: 0 25px 25px 25px;
+  display: grid;
+  grid-template-columns: 320px auto;
+  grid-template-areas: "div1 div2"; }
+  .beerInfoContainer .boxLeft {
+    display: grid;
+    grid-area: div1; }
+    .beerInfoContainer .boxLeft img {
+      width: 100%; }
+  .beerInfoContainer .boxRight {
+    display: grid;
+    grid-area: div2;
+    padding: 25px 52px 25px 52px; }
+    .beerInfoContainer .boxRight h2 {
+      margin: 0 150px 20px 150px;
+      text-align: center;
+      font-weight: normal;
+      border-bottom: 1px solid grey; }
+    .beerInfoContainer .boxRight h3 {
+      margin: 0;
+      text-align: right;
+      font-weight: lighter; }
+    .beerInfoContainer .boxRight .overallText {
+      margin: 0 0 20px 0;
+      text-align: center;
+      line-height: 30px; }
+    .beerInfoContainer .boxRight h4 {
+      margin: 0; }
+    .beerInfoContainer .boxRight .myBtn, .beerInfoContainer .boxRight .myBtn2 {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: 40px;
+      cursor: pointer;
+      border: 1px solid lightgrey;
+      padding: 10px;
+      background-color: #e7e7e7; }
+      .beerInfoContainer .boxRight .myBtn:hover, .beerInfoContainer .boxRight .myBtn2:hover {
+        background-color: white; }
+  .beerInfoContainer .expend {
+    display: none;
+    margin-top: 30px; }
+    .beerInfoContainer .expend h4 {
       font-family: "avenir";
-      margin: 5px 15px;
-      font-weight: bold;
-      padding: 10px; }
-    .beerInfo #expension p {
+      font-weight: bold; }
+    .beerInfoContainer .expend p {
       text-align: justify;
       margin: 5px 15px;
-      padding: 10px;
-      line-height: 30px; }
-    .beerInfo #expension .mouth {
-      width: 5%; }
-      .beerInfo #expension .mouth .cls-1,
-      .beerInfo #expension .mouth .cls-2 {
+      line-height: 30px;
+      padding-bottom: 30px; }
+    .beerInfoContainer .expend .mouth {
+      width: 4%;
+      margin-left: 8px; }
+      .beerInfoContainer .expend .mouth .cls-1,
+      .beerInfoContainer .expend .mouth .cls-2 {
         stroke: #000;
         stroke-miterlimit: 10; }
 
@@ -236,7 +254,8 @@ li {
     height: 36px; }
     .orderTicket .orderIdContainer h2 {
       margin: 0;
-      font-family: "avenir"; }
+      font-family: "avenir";
+      font-weight: lighter; }
   .orderTicket .orderLengthContainer {
     margin: 12px 60px 0px 14px;
     border-right: 1px solid black;
@@ -313,6 +332,8 @@ li {
         color: grey;
         text-decoration: none;
         cursor: pointer; }
+    .modal .modal-content h3 {
+      margin-left: 20px; }
 
 #modalForm {
   background-color: white;
@@ -343,57 +364,3 @@ input[type=text] {
   text-align: center; }
   #submit:hover {
     background-color: #537e4c; }
-
-.beerInfoContainer {
-  background-color: white;
-  border: 1px solid lightgrey;
-  height: auto;
-  margin: 0 25px 25px 25px;
-  display: grid;
-  grid-template-columns: 300px 2fr;
-  grid-template-areas: "div1 div2" "full full"; }
-  .beerInfoContainer .boxLeft {
-    display: grid;
-    grid-area: div1; }
-    .beerInfoContainer .boxLeft img {
-      width: 90%;
-      padding: 25px; }
-  .beerInfoContainer .boxRight {
-    display: grid;
-    grid-area: div2;
-    padding: 25px 52px 25px 0;
-    overflow: scroll; }
-    .beerInfoContainer .boxRight h2 {
-      margin: 0; }
-    .beerInfoContainer .boxRight p {
-      margin: 0;
-      text-align: justify; }
-    .beerInfoContainer .boxRight h4 {
-      margin: 0; }
-  .beerInfoContainer .expend {
-    background-color: #537e4c;
-    grid-area: full; }
-
-.beerInfoContainerBis {
-  background-color: white;
-  border: 1px solid lightgrey;
-  height: 270px;
-  margin: 0 25px 25px 25px;
-  display: grid;
-  grid-template-columns: 300px 2fr; }
-  .beerInfoContainerBis .boxLeftBis {
-    display: grid; }
-    .beerInfoContainerBis .boxLeftBis img {
-      width: 90%;
-      padding: 25px; }
-  .beerInfoContainerBis .boxRightBis {
-    display: grid;
-    padding: 25px 52px 25px 0;
-    overflow: scroll; }
-    .beerInfoContainerBis .boxRightBis h2 {
-      margin: 0; }
-    .beerInfoContainerBis .boxRightBis p {
-      margin: 0;
-      text-align: justify; }
-    .beerInfoContainerBis .boxRightBis h4 {
-      margin: 0; }
