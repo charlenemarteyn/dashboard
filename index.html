@@ -19,7 +19,7 @@
             <button class="tablink" onclick="openPage('Dashboard', this, 'white')" id="defaultOpen">
                 <i class="fas fa-chart-line fa-lg"></i> Dashboard</button>
             <button class="tablink" onclick="openPage('Products', this, 'white')">
-                <i class="fas fa-beer fa-lg"></i> Products</button>
+                <i class="fas fa-beer fa-lg"></i> Beer types</button>
             <button class="tablink" onclick="openPage('Clients', this, 'white')">
                 <i class="fas fa-align-left fa-lg"></i> Orders</button>
             <button class="tablink" onclick="openPage('Staff', this, 'white')">
@@ -38,7 +38,7 @@
 
             <div class="ticketsection">
                 <!-- Section's title -->
-                <h1>Dashboard</h1>
+                <h1>DASHBOARD</h1>
 
                 <!-- Quick overview of data (top boxes) - Customized for Dashboard section -->
                 <div class="topBoxesWrapper">
@@ -81,7 +81,7 @@
                     <div class="divLightGreen">
                         <div class="left">
                             <h2 id="timeNumber">22:00</h2>
-                            <p>before closing</p>
+                            <p>closing time</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-clock fa-2x"></i>
@@ -105,18 +105,18 @@
                 </div>
 
                 <!-- graph showing tap beer's volume -->
-                <div id="stockSection" class="bigContainerStyle">
+                <div class="bigContainerStyle">
                     <div class="stockTitle">
                         <h2>Volume of tap beer (in liter)</h2>
                         <i class="fas fa-times"></i>
                     </div>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="beerVolChart"></canvas>
                 </div>
             </div>
             <div id="thirdMain">
 
                 <!-- graph showing beer stock -->
-                <div id="notsure" class="bigContainerStyle">
+                <div class="bigContainerStyle">
                     <div class="stockTitle">
                         <h2>Stock overview (number of keg)</h2>
                         <i class="fas fa-times"></i>
@@ -125,7 +125,7 @@
                 </div>
 
                 <!-- Beer popularity pie-->
-                <div id="beerPop" class="smallContainerStyle">
+                <div class="smallContainerStyle">
                     <div class="sectiontitle">
                         <h2>Beer popularity</h2>
                         <i class="fas fa-times"></i>
@@ -150,14 +150,14 @@
             <div class="ticketsection">
 
                 <!-- Section's title -->
-                <h1>Products</h1>
+                <h1>BEER TYPES</h1>
                 
                 <!-- Quick overview of data (top boxes) - Customized for PRODUCT SECTION -->
                 <div class="topBoxesWrapper">
                     <div class="divYellow">
                         <div class="left">
                             <h2 class="numprod"></h2>
-                            <p>products</p>
+                            <p>beer types</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-beer fa-2x"></i>
@@ -183,7 +183,7 @@
                     </div>
                     <div class="divDarkGreen">
                         <div class="left">
-                            <h2 class="imnotanumber">Row26</h2>
+                            <h2 class="leastPopu"></h2>
                             <p>least popular</p>
                         </div>
                         <div class="right">
@@ -192,7 +192,7 @@
                     </div>
                     <div class="divLightGreen">
                         <div class="left">
-                            <h2>Hoppily</h2>
+                            <h2 class="mostPopu"></h2>
                             <p>most popular</p>
                         </div>
                         <div class="right">
@@ -201,14 +201,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- TRIAL_____________________________________________________________ -->
-            
-                
-
-
-
-
 
              <!-- Container for the beer info template -->
             <section class="prodDescriSpot"></section>
@@ -219,18 +211,18 @@
                 <div class="beerInfoContainer">
                         <div class="boxLeft"><img src="images/githop.png"></div>
                         <div class="boxRight">
-                                    <h3 class="alc">blablabla</h2>
+                                    <h3 class="alc"></h2>
                                     <h2 class="beerName"></h2>
                             <p class="overallText"></p>
                             <div class="myBtn">Read more</div>
         
                             <div class="expend"> 
-                                    <h4><i class="fas fa-adjust"></i> Appearance :</h4>
+                                    <h4><i class="fas fa-adjust"></i> Appearance</h4>
                                     <p class="appearText"> </p>
-                                    <h4><i class="fas fa-flask"></i> Aroma :</h4>
+                                    <h4><i class="fas fa-flask"></i> Aroma</h4>
                                     <p class="aromaText">
                                     </p>
-                                    <h4><i class="fas fa-leaf"></i> Flavor :</h4>
+                                    <h4><i class="fas fa-leaf"></i> Flavor</h4>
                                     <p class="flavorText"></p>
                                     <h4><svg class="mouth" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.38 17.43">
                                         <title>mouth</title>
@@ -239,10 +231,10 @@
                                         <path class="cls-2" d="M48.5,46.5a5.28,5.28,0,0,1,2.85-2.61c3.9-1.37,9.26,2.83,12.45,5.84,1.63,1.54,2.7,2.77,2.7,2.77s-19,17-36,0c0,0,1.07-1.23,2.7-2.77,3.19-3,8.55-7.21,12.45-5.84A5.28,5.28,0,0,1,48.5,46.5"
                                             transform="translate(-29.82 -43.12)" />
                                     </svg>
-                                    Mouth feel :</h4>
+                                    Mouth feel</h4>
                                     <p class="mouthText"></p>
-                                    <h4><i class="fas fa-comment"></i>Category :</h4>
-                                    <p class="categoryText">Hefeweizen</p>
+                                    <h4><i class="fas fa-comment"></i>Category</h4>
+                                    <p class="categoryText"></p>
                                 
                                     <div class="myBtn2">Read less</div>
         
@@ -264,7 +256,7 @@
             <div class="ticketsection">
 
                 <!-- Section's title -->
-                <h1>Orders</h1>
+                <h1>ORDERS</h1>
                 
                 <!-- Quick overview of data (top boxes) - Customized for ORDER SECTION -->
                 <div class="topBoxesWrapper">
@@ -297,8 +289,8 @@
                     </div>
                     <div class="divDarkGreen">
                         <div class="left">
-                            <h2 class="minimum">1</h2>
-                            <p>min. ordred</p>
+                            <h2 class="minOrder"></h2>
+                            <p>min. ordered</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-minus fa-2x"></i>
@@ -306,8 +298,8 @@
                     </div>
                     <div class="divLightGreen">
                         <div class="left">
-                            <h2>4</h2>
-                            <p>max. ordred</p>
+                            <h2 class="maxOrder"></h2>
+                            <p>max. ordered</p>
                         </div>
                         <div class="right">
                             <i class="fas fa-plus fa-2x"></i>
@@ -327,7 +319,7 @@
                     <h2 class="orderIdHere"></h2>
                 </div>
                 <div class="orderLengthContainer sameLine">
-                    <p class="numOfProdHere">4 drinks</p>
+                    <p class="numOfProdHere"></p>
                 </div>
             </div>
         </template>
@@ -335,7 +327,7 @@
         <!-- Detail of the order template -->
         <template class="drinksOrderedTemplate">
             <div class="sameLine moveToRight">
-                <p class="orderedDrinksHere">row26</p>
+                <p class="orderedDrinksHere"></p>
             </div>
         </template>
 
@@ -351,13 +343,13 @@
 
             <div class="ticketsection">
                 <!-- Section's title -->
-                <h1>Employees</h1>
+                <h1>EMPLOYEES</h1>
 
                 <!-- Quick overview of data (top boxes) - Customized for EMPLOYEES SECTION -->
                 <div class="topBoxesWrapper">
                     <div class="divYellow">
                         <div class="left">
-                            <h2 id="numTotalOfEmployees">12</h2>
+                            <h2 id="numTotalOfEmployees"></h2>
                             <p>employees</p>
                         </div>
                         <div class="right">
@@ -384,20 +376,20 @@
                     </div>
                     <div class="divDarkGreen">
                         <div class="left">
-                            <h2>Peter</h2>
-                            <p>least efficient</p>
+                            <h2 class="servedMostBeer">Peter</h2>
+                            <p>served most beer</p>
                         </div>
                         <div class="right">
-                            <i class="far fa-thumbs-down fa-2x"></i>
+                            <i class="far fa-thumbs-up fa-2x"></i>
                         </div>
                     </div>
                     <div class="divLightGreen">
                         <div class="left">
-                            <h2>Jonas</h2>
-                            <p>most efficient</p>
+                            <h2 class="servedMostOrder">Jonas</h2>
+                            <p>served most order</p>
                         </div>
                         <div class="right">
-                            <i class="far fa-thumbs-up fa-2x"></i>
+                            <i class="fas fa-cart-plus fa-2x"></i>
                         </div>
                     </div>
                 </div>
@@ -501,10 +493,8 @@
         </div>
     </div>
 
-
-
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
