@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", getMyData)
 window.addEventListener("DOMContentLoaded", addDefaultListItems)
 
 // Calls the funcion getMyData every 1 second
-setInterval(this.getMyData.bind(this), 1 * 1000);
+setInterval(getMyData, 1 * 1000);
 
 // DASHBOARD SECTION DECLARATION 
 let numInQueue = document.querySelector(".queue");
@@ -485,6 +485,7 @@ function updateBartenderStatus(staffData) {
 
             case "reserveTap":
                 taskString = "Waiting for the needed tap to be available"; 
+            break;
 
             case "pourBeer":
                 taskString = "Pouring beer using tap " + bartender.usingTap;    

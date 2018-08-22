@@ -1,4 +1,4 @@
-.topBoxesWrapper .divYellow, .topBoxesWrapper .divSalmon, .topBoxesWrapper .divRed, .topBoxesWrapper .divDarkGreen, .topBoxesWrapper .divLightGreen {
+.topBoxesWrapper .divYellow, .topBoxesWrapper .divSalmon, .topBoxesWrapper .divRed, .topBoxesWrapper .divDarkGreen, .topBoxesWrapper .divLightGreen, .topBoxesWrapper .divBleuFonce, .topBoxesWrapper .divBleuCiel, .topBoxesWrapper .divJaune, .topBoxesWrapper .divRosePale, .topBoxesWrapper .divFushia, .topBoxesWrapper .div1, .topBoxesWrapper .div2, .topBoxesWrapper .div3, .topBoxesWrapper .div4, .topBoxesWrapper .div5, .topBoxesWrapper .div6, .topBoxesWrapper .div7, .topBoxesWrapper .div8, .topBoxesWrapper .div9, .topBoxesWrapper .div10 {
   display: grid;
   grid-template-columns: 135px 70px;
   height: 81px;
@@ -93,6 +93,36 @@ body {
     background-color: #e8825b; }
   .topBoxesWrapper .divLightGreen {
     background-color: #f1bc6a; }
+  .topBoxesWrapper .divBleuFonce {
+    background-color: #C4E675; }
+  .topBoxesWrapper .divBleuCiel {
+    background-color: #6cbaae; }
+  .topBoxesWrapper .divJaune {
+    background-color: #a4809f; }
+  .topBoxesWrapper .divRosePale {
+    background-color: #675a89; }
+  .topBoxesWrapper .divFushia {
+    background-color: #006382; }
+  .topBoxesWrapper .div1 {
+    background-color: #c49967; }
+  .topBoxesWrapper .div2 {
+    background-color: #b8b8b8; }
+  .topBoxesWrapper .div3 {
+    background-color: #7c3264; }
+  .topBoxesWrapper .div4 {
+    background-color: #7e706f; }
+  .topBoxesWrapper .div5 {
+    background-color: #99b0a0; }
+  .topBoxesWrapper .div6 {
+    background-color: #58657f; }
+  .topBoxesWrapper .div7 {
+    background-color: #898640; }
+  .topBoxesWrapper .div8 {
+    background-color: #c3b08c; }
+  .topBoxesWrapper .div9 {
+    background-color: #b15d9b; }
+  .topBoxesWrapper .div10 {
+    background-color: #6c6ec4; }
 
 .right {
   text-align: center;
@@ -289,7 +319,7 @@ li {
     text-align: center;
     font-family: "avenir"; }
   .secondtrial .status {
-    color: #e8825b; }
+    color: #898640; }
   .secondtrial .whichOrder {
     margin: 0;
     font-weight: 600; }

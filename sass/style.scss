@@ -155,6 +155,68 @@ body {
                 @extend %topBoxesStyle-shared;
                 background-color: $lightGreen;
             }
+            .divBleuFonce { // Dark green box
+                @extend %topBoxesStyle-shared;
+                background-color:#C4E675;
+            }
+            .divBleuCiel { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #6cbaae;
+            }
+            .divJaune { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #a4809f;
+            }
+            .divRosePale { // Dark green box
+                @extend %topBoxesStyle-shared;
+                background-color:#675a89;
+            }
+            .divFushia { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #006382;
+            }
+
+            .div1 { // Dark green box
+                @extend %topBoxesStyle-shared;
+                background-color:#c49967;
+            }
+            .div2 { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #b8b8b8;
+            }
+            .div3 { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #7c3264;
+            }
+            .div4 { // Dark green box
+                @extend %topBoxesStyle-shared;
+                background-color:#7e706f;
+            }
+            .div5 { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #99b0a0;
+            }
+
+            .div6 { // Dark green box
+                @extend %topBoxesStyle-shared;
+                background-color:#58657f;
+            }
+            .div7 { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #898640;
+            }
+            .div8 { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #c3b08c;
+            }
+            .div9 { // Dark green box
+                @extend %topBoxesStyle-shared;
+                background-color:#b15d9b;
+            }
+            .div10 { // Light green box
+                @extend %topBoxesStyle-shared;
+                background-color: #6c6ec4;
+            }
 
 }
 
@@ -418,7 +480,7 @@ li { // elements created inside of the ul tag
         }
         .status { // Status of the employees 
             @extend .staffName;
-            color: $darkGreen;
+            color: #898640;
         }
         .whichOrder{ // title -> "order status" 
             @extend .staffName;
